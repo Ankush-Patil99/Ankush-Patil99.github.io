@@ -1,137 +1,158 @@
-<h2 id="projects">Projects</h2>
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ankush Patil — ML/NLP Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- =============================== -->
-<!-- 🔵 LLaMA Fine-Tuning (RAG + LoRA) -->
-<!-- =============================== -->
-<div class="project-card">
-  <h3>Wikipedia → LLaMA Fine-Tuning (RAG + LoRA)</h3>
-  <p>
-    Built a complete RAG pipeline with optimized chunking, embeddings, and FAISS retrieval.
-    Fine-tuned LLaMA using LoRA for factual QA.  
-    <strong>Results:</strong> ROUGE-1: 0.033 • ROUGE-L: 0.024 • Significant training-loss reduction.
-  </p>
-  <p>
-    <a href="https://github.com/Ankush-Patil99/wikipedia-rag-llama-finetuning">GitHub Repo</a>
-  </p>
-</div>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #fafafa;
+      margin: 0;
+      padding: 0;
+      color: #222;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      color: #555;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    nav a {
+      margin-right: 18px;
+      text-decoration: none;
+      color: #0078ff;
+      font-weight: 500;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    h2 {
+      margin-top: 45px;
+      font-size: 26px;
+      border-left: 6px solid #0078ff;
+      padding-left: 10px;
+    }
+    .project-card {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    .project-card h3 {
+      margin-top: 0;
+    }
+    .project-card a {
+      color: #0078ff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      margin-top: 50px;
+      padding: 20px 0;
+      font-size: 15px;
+      color: #555;
+    }
+  </style>
+</head>
 
-<!-- =============================== -->
-<!-- 🔵 Transformer EN ↔ HI Translation -->
-<!-- =============================== -->
-<div class="project-card">
-  <h3>Transformer Hindi ↔ English Translation (From Scratch)</h3>
-  <p>
-    Implemented a full Transformer Encoder–Decoder architecture from scratch 
-    (attention, masking, beam search, positional encoding).  
-    <strong>Result:</strong> BLEU 49.76 on Hindi→English translation; deployed on Hugging Face.
-  </p>
-  <p>
-    <a href="https://github.com/Ankush-Patil99/transformer-seq2seq-from-scratch">GitHub Repo</a>
-  </p>
-</div>
+<body>
+  <div class="container">
 
-<!-- =============================== -->
-<!-- 🔵 Amazon Reviews NLP -->
-<!-- =============================== -->
-<div class="project-card">
-  <h3>Amazon Reviews NLP Analysis (3M+ Reviews)</h3>
-  <p>
-    Scalable NLP pipeline with sentiment analysis, aspect mining, topic modeling, 
-    and BART/T5-based summarization.  
-    Processes millions of reviews efficiently.
-  </p>
-  <p>
-    <a href="https://github.com/Ankush-Patil99/amazon-reviews-nlp-analysis">GitHub Repo</a>
-  </p>
-</div>
+    <h1>Ankush Patil — ML / NLP Engineer</h1>
+    <p class="subtitle">LLM Fine-tuning • RAG • Transformers • PyTorch • Hugging Face</p>
 
-<!-- =============================== -->
-<!-- 🔵 SMS Spam Classification -->
-<!-- =============================== -->
-<div class="project-card">
-  <h3>SMS Spam Classification — Naive Bayes, GDA, Logistic Regression</h3>
-  <p>
-    Classical ML pipeline using TF-IDF + Naive Bayes, Logistic Regression, and GDA.
-    Highlighted high-impact spam tokens and achieved robust recall on noisy text.
-  </p>
-  <p>
-    <a href="https://github.com/Ankush-Patil99/spam-classification-bayes-gda-logreg">GitHub Repo</a>
-  </p>
-</div>
+    <nav>
+      <a href="resume.pdf">Resume</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-<!-- =============================== -->
-<!-- 🔵 Plant Disease Detection -->
-<!-- =============================== -->
-<div class="project-card">
-  <h3>Plant Disease Detection — ResNet18</h3>
-  <p>
-    Built an image-classification model using ResNet18 with heavy augmentation and OneCycleLR.
-    <strong>38 disease classes</strong> with Grad-CAM interpretability for insights.
-  </p>
-  <p>
-    <a href="https://github.com/Ankush-Patil99/plant-disease-detection-resnet18">GitHub Repo</a>
-  </p>
-</div>
+    <h2 id="projects">Projects</h2>
 
-<!-- =============================== -->
-<!-- 🔵 Heart Stroke Prediction -->
-<!-- =============================== -->
-<div class="project-card">
-  <h3>Heart Stroke Prediction System</h3>
-  <p>
-    End-to-end ML pipeline with feature engineering, model comparison,
-    and imbalanced-data handling for stroke risk prediction.
-  </p>
-  <p>
-    <a href="https://github.com/Ankush-Patil99/Heart-Stroke-Prediction-ML">GitHub Repo</a>
-  </p>
-</div>
+    <!-- PROJECT CARDS START -->
 
-<!-- =============================== -->
-<!-- 🔵 Credit Card Fraud Detection -->
-<!-- =============================== -->
-<div class="project-card">
-  <h3>Credit Card Fraud Detection — Classical ML + Anomaly Models</h3>
-  <p>
-    Built a hybrid anomaly-detection framework using PCA, UMAP, KMeans, GMM, DBSCAN,
-    Isolation Forest, and LOF.  
-    <strong>Isolation Forest delivered the best precision–recall performance.</strong>
-  </p>
-  <p>
-    <a href="https://github.com/Ankush-Patil99/credit-card-fraud-detection-anomaly-models">GitHub Repo</a>
-  </p>
-</div>
+    <div class="project-card">
+      <h3>Wikipedia → LLaMA Fine-Tuning (RAG + LoRA)</h3>
+      <p>Built a full RAG pipeline with optimized chunking + embeddings and fine-tuned LLaMA using LoRA for factual QA.<br>
+      <strong>Results:</strong> ROUGE-1: 0.033 • ROUGE-L: 0.024 • Significant training-loss reduction.</p>
+      <a href="https://github.com/Ankush-Patil99/wikipedia-rag-llama-finetuning">GitHub Repo</a>
+    </div>
 
-<!-- =============================== -->
-<!-- 🔵 Student Performance Ranking -->
-<!-- =============================== -->
-<div class="project-card">
-  <h3>Student Performance & Ranking System</h3>
-  <p>
-    Built a regression-based academic score predictor using PCA, SVM,
-    Gradient Boosting, and stacking.  
-    <strong>Achieved R² = 0.90</strong> with strong generalization.
-  </p>
-  <p>
-    <a href="https://github.com/Ankush-Patil99/student-performance-ml-project">GitHub Repo</a>
-  </p>
-</div>
+    <div class="project-card">
+      <h3>Transformer Hindi ↔ English Translation (From Scratch)</h3>
+      <p>Implemented a full Transformer Encoder–Decoder with custom attention, masking, positional encoding, and beam search.<br>
+      <strong>Result:</strong> BLEU 49.76; deployed on Hugging Face.</p>
+      <a href="https://github.com/Ankush-Patil99/transformer-seq2seq-from-scratch">GitHub Repo</a>
+    </div>
 
-<h2 id="contact">Contact</h2>
-<p>
-  <strong>Ankush Patil</strong><br>
-  Machine Learning & NLP Engineer <br><br>
+    <div class="project-card">
+      <h3>Amazon Reviews NLP Analysis (3M+ Reviews)</h3>
+      <p>Complete NLP pipeline for sentiment, aspect mining, topic modeling, and summarization (BART/T5).</p>
+      <a href="https://github.com/Ankush-Patil99/amazon-reviews-nlp-analysis">GitHub Repo</a>
+    </div>
 
-  📧 Email: 
-  <a href="mailto:ankpatil1203@gmail.com">ankpatil1203@gmail.com</a><br>
+    <div class="project-card">
+      <h3>SMS Spam Classification — Naive Bayes, GDA, Logistic Regression</h3>
+      <p>TF-IDF + classical ML pipeline identifying spam patterns with strong recall on noisy text.</p>
+      <a href="https://github.com/Ankush-Patil99/spam-classification-bayes-gda-logreg">GitHub Repo</a>
+    </div>
 
-  💼 LinkedIn: 
-  <a href="https://www.linkedin.com/in/ankush-patil-48989739a">
-    linkedin.com/in/ankush-patil-48989739a
-  </a><br>
+    <div class="project-card">
+      <h3>Plant Disease Detection — ResNet18</h3>
+      <p>ResNet18 model with augmentation + OneCycleLR; <strong>38 disease classes</strong> with Grad-CAM interpretability.</p>
+      <a href="https://github.com/Ankush-Patil99/plant-disease-detection-resnet18">GitHub Repo</a>
+    </div>
 
-  🌐 GitHub:
-  <a href="https://github.com/Ankush-Patil99">
-    github.com/Ankush-Patil99
-  </a>
-</p>
+    <div class="project-card">
+      <h3>Heart Stroke Prediction System</h3>
+      <p>End-to-end ML pipeline with feature engineering, model comparison, and imbalance handling.</p>
+      <a href="https://github.com/Ankush-Patil99/Heart-Stroke-Prediction-ML">GitHub Repo</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Credit Card Fraud Detection — Classical ML + Anomaly Models</h3>
+      <p>Hybrid anomaly detection using PCA, UMAP, KMeans, GMM, DBSCAN, Isolation Forest, LOF.<br>
+      <strong>Best model:</strong> Isolation Forest.</p>
+      <a href="https://github.com/Ankush-Patil99/credit-card-fraud-detection-anomaly-models">GitHub Repo</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Student Performance & Ranking System</h3>
+      <p>Regression-based academic score predictor using PCA, SVM, Gradient Boosting, stacking.<br>
+      <strong>Result:</strong> R² = 0.90</strong></p>
+      <a href="https://github.com/Ankush-Patil99/student-performance-ml-project">GitHub Repo</a>
+    </div>
+
+    <!-- PROJECT CARDS END -->
+
+    <h2 id="contact">Contact</h2>
+    <p>
+      <strong>Ankush Patil</strong><br>
+      Machine Learning & NLP Engineer <br><br>
+
+      📧 Email: <a href="mailto:ankpatil1203@gmail.com">ankpatil1203@gmail.com</a><br>
+      💼 LinkedIn: <a href="https://www.linkedin.com/in/ankush-patil-48989739a">linkedin.com/in/ankush-patil-48989739a</a><br>
+      🌐 GitHub: <a href="https://github.com/Ankush-Patil99">github.com/Ankush-Patil99</a>
+    </p>
+
+    <footer>© 2025 Ankush Patil — Portfolio Website</footer>
+
+  </div>
+</body>
+</html>
