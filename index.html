@@ -232,42 +232,83 @@
 
     <div class="divider" aria-hidden></div>
 
-    <!-- EXPERIENCE & TIMELINE -->
-    <section id="experience" class="section" aria-label="Experience">
-      <div style="display:flex;gap:18px;align-items:flex-start;">
-        <div class="exp-left" aria-hidden>
-          <div style="font-weight:700">Experience</div>
-          <div style="margin-top:10px;color:var(--muted)">Selected roles</div>
-        </div>
-        <div class="exp-right">
-          <!-- Timeline items generated from resume content. Citation: Resume.pdf. -->
-          <div class="timeline" role="list">
-            <div class="timeline-item" role="listitem">
-              <div style="font-weight:700">Site Engineer — Charwak Engineers & Developers</div>
-              <div style="color:var(--muted); font-size:13px; margin-top:4px">Feb 2023 – Nov 2025 (Onsite)</div>
-              <ul style="color:var(--muted); margin-top:8px">
-                <li>Supervised onsite construction activities, ensuring adherence to drawings, specs and safety standards.</li>
-                <li>Developed documentation workflows, technical reporting, and process improvements transferable to ML system design.</li>
-              </ul>
-            </div>
+   <!-- EXPERIENCE & TIMELINE -->
+<section id="experience" class="section" aria-label="Experience">
+  <div style="display:flex; gap:18px; align-items:flex-start;">
+    
+    <!-- Left Header -->
+    <div class="exp-left" aria-hidden>
+      <div style="font-weight:700; font-size:20px;">Experience</div>
+      <div style="margin-top:10px; color:var(--muted); font-size:13px;">Career Timeline</div>
+    </div>
 
-            <div class="timeline-item" role="listitem">
-              <div style="font-weight:700">Independent ML / NLP Projects</div>
-              <div style="color:var(--muted); font-size:13px; margin-top:4px">2024 – 2025</div>
-              <ul style="color:var(--muted); margin-top:8px">
-                <li>Built end-to-end projects: RAG + fine-tuned LLaMA, Transformer from-scratch, large-scale Amazon reviews pipeline, CV models.</li>
-                <li>Implemented reproducible pipelines, evaluation metrics and model deployment scripts (HuggingFace & GitHub).</li>
-              </ul>
-            </div>
+    <!-- Right Timeline -->
+    <div class="exp-right">
+      <div class="timeline" role="list">
 
-            <div class="timeline-item" role="listitem">
-              <div style="font-weight:700">Education</div>
-              <div style="color:var(--muted); font-size:13px; margin-top:4px">B.E. Civil Engineering — K.K. Wagh I.E.E.R., Nashik (2021)</div>
-            </div>
+        <!-- SITE ENGINEER -->
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-date">Feb 2023 – Nov 2025</div>
+          <div class="timeline-content">
+            <h3>Site Engineer — Charwak Engineers & Developers</h3>
+            <p style="color:var(--muted); font-size:13px; margin-top:4px;">Onsite Role</p>
+            <ul style="color:var(--muted); margin-top:10px; line-height:1.5;">
+              <li>Supervised onsite construction activities ensuring compliance with technical drawings, specifications, and safety standards.</li>
+              <li>Implemented documentation workflows and reporting processes, improving traceability and team coordination.</li>
+              <li>Gained experience in structured problem-solving, planning, and cross-functional coordination—skills transferable to ML system design.</li>
+            </ul>
           </div>
         </div>
+
+        <!-- ML/NLP PROJECT EXPERIENCE -->
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-date">2024 – 2025</div>
+          <div class="timeline-content">
+            <h3>Independent ML / NLP Engineering Projects</h3>
+            <p style="color:var(--muted); font-size:13px; margin-top:4px;">Self-driven Applied Research</p>
+            <ul style="color:var(--muted); margin-top:10px; line-height:1.5;">
+              <li>Built end-to-end ML systems: RAG pipelines, LLaMA LoRA fine-tuning, custom Transformer models, multimodal CV classifiers.</li>
+              <li>Designed scalable workflows for data processing, training, evaluation (BLEU, ROUGE, accuracy), and model deployment via HuggingFace.</li>
+              <li>Developed strong expertise in PyTorch, Transformers, LLM tuning, vector databases, and classical ML pipelines.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- UPSC + SSC CGL -->
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-date">Jul 2021 – Sep 2024</div>
+          <div class="timeline-content">
+            <h3>UPSC CSE & SSC CGL — Full-Time Competitive Exam Preparation</h3>
+            <p style="color:var(--muted); font-size:13px; margin-top:4px;">Analytical & Reasoning-Focused Preparation</p>
+            <ul style="color:var(--muted); margin-top:10px; line-height:1.5;">
+              <li>Prepared for <strong>UPSC CSE 2022 & 2023</strong>, strengthening analytical reasoning, structured thinking, and comprehension skills.</li>
+              <li>Appeared for <strong>SSC CGL 2023 & 2024</strong>, improving quantitative aptitude, logical reasoning, and data-driven decision-making.</li>
+              <li>Developed disciplined self-learning habits (8–10 hrs/day) with strong planning, focus, and long-term goal management.</li>
+              <li>Enhanced research ability, information synthesis, explanatory writing, and comprehension—skills deeply aligned with NLP work.</li>
+            </ul>
+
+            <p style="color:var(--muted); font-size:13px; margin-top:6px; font-style:italic;">
+              This preparation strengthened foundations essential for ML/NLP: analytical reasoning, long-form comprehension, structured problem-solving, and rapid self-learning.
+            </p>
+          </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-date">2017 – 2021</div>
+          <div class="timeline-content">
+            <h3>Education</h3>
+            <p style="color:var(--muted); font-size:13px; margin-top:4px;">
+              B.E. Civil Engineering — K.K. Wagh Institute of Engineering Education & Research, Nashik
+            </p>
+          </div>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
 
     <div class="divider" aria-hidden></div>
 
@@ -292,7 +333,7 @@
           <!-- Project 2 -->
           <article class="project-card" data-tooltip='{"cat":"NLP","tech":"PyTorch, Custom Attention, Beam Search","year":"Aug–Sep 2025","size":"Custom parallel corpora","impact":"BLEU 49.76"}'>
             <div class="project-cat">NLP</div>
-            <div class="project-thumb">TR</div>
+            <div class="project-thumb">NLP</div>
             <div class="project-body">
               <h3>Transformer — English ↔ Hindi (From Scratch)</h3>
               <p>Implemented a full Transformer encoder–decoder with custom attention, masking and beam search. <strong>BLEU 49.76</strong>.</p>
@@ -303,7 +344,7 @@
           <!-- Project 3 -->
           <article class="project-card" data-tooltip='{"cat":"NLP","tech":"BART, TF-IDF, Topic Modeling","year":"Jul–Aug 2025","size":"3M+ reviews","impact":"Scalable summarization pipeline"}'>
             <div class="project-cat">NLP</div>
-            <div class="project-thumb">AR</div>
+            <div class="project-thumb">NLP</div>
             <div class="project-body">
               <h3>Amazon Reviews NLP Analysis (3M+ Reviews)</h3>
               <p>Scalable pipeline including sentiment, aspect-mining and BART/T5 summarization for millions of reviews.</p>
@@ -314,7 +355,7 @@
           <!-- Project 4 -->
           <article class="project-card" data-tooltip='{"cat":"NLP","tech":"TF-IDF, Logistic Regression, Naive Bayes","year":"Feb–Mar 2025","size":"SMS dataset","impact":"High recall"}'>
             <div class="project-cat">NLP</div>
-            <div class="project-thumb">SP</div>
+            <div class="project-thumb">NLP</div>
             <div class="project-body">
               <h3>SMS Spam Classification — Naive Bayes, GDA, Logistic Regression</h3>
               <p>TF-IDF + classical models identifying high-impact spam tokens with strong recall on noisy text.</p>
@@ -339,7 +380,7 @@
           <!-- Project 6 -->
           <article class="project-card" data-tooltip='{"cat":"ML","tech":"Feature Engineering, Imbalance handling","year":"2025","size":"Health dataset","impact":"Stroke risk prediction"}'>
             <div class="project-cat">ML</div>
-            <div class="project-thumb">HS</div>
+            <div class="project-thumb">ML</div>
             <div class="project-body">
               <h3>Heart Stroke Prediction System</h3>
               <p>End-to-end ML pipeline for stroke risk prediction with feature engineering and imbalance handling.</p>
@@ -350,7 +391,7 @@
           <!-- Project 7 -->
           <article class="project-card" data-tooltip='{"cat":"ML","tech":"PCA, UMAP, Isolation Forest","year":"Feb–Mar 2025","size":"Card transactions","impact":"Isolation Forest best PR"}'>
             <div class="project-cat">ML</div>
-            <div class="project-thumb">FR</div>
+            <div class="project-thumb">ML</div>
             <div class="project-body">
               <h3>Credit Card Fraud Detection — Anomaly Models</h3>
               <p>Hybrid anomaly-detection workflow (PCA, UMAP, Isolation Forest). Isolation Forest delivered best precision-recall.</p>
@@ -361,7 +402,7 @@
           <!-- Project 8 -->
           <article class="project-card" data-tooltip='{"cat":"ML","tech":"PCA,SVM,GradientBoosting,Stacking","year":"Jan–Feb 2025","size":"Student dataset","impact":"R² = 0.90"}'>
             <div class="project-cat">ML</div>
-            <div class="project-thumb">ST</div>
+            <div class="project-thumb">ML</div>
             <div class="project-body">
               <h3>Student Performance & Ranking System</h3>
               <p>Stacked regression (PCA, SVM, Gradient Boosting). <strong>R² = 0.90</strong>.</p>
