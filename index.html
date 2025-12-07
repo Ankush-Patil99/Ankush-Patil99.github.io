@@ -145,26 +145,7 @@
 
   .cta-contact { margin-top:12px; background:linear-gradient(90deg,var(--primary), #33a1ff); color:#fff; padding:10px 12px; border-radius:8px; display:inline-block; text-decoration:none; font-weight:700 }
 
-  /* floating email and back-to-top (WORKING) */
-  .floating-email {
-    position: fixed;
-    right: 16px;
-    bottom: 86px;
-    width: 54px;
-    height: 54px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(90deg, var(--primary), #33a1ff);
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-    text-decoration: none;
-    box-shadow: 0 10px 30px rgba(51,161,255,0.22);
-    z-index: 99999; /* ensure above content */
-  }
-  .floating-email:focus { outline: 3px solid rgba(88,166,255,0.18); outline-offset:4px; }
+
 
   .to-top { position:fixed; right:16px; bottom:16px; width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; background:var(--panel); color:var(--text); box-shadow:var(--shadow); z-index:60; cursor:pointer; opacity:0; transition:opacity .2s }
 
@@ -427,8 +408,8 @@
       <div class="skills-area">
         <div class="skill-box" id="basicView">
           <div style="margin-top:10px">
-            <div class="bar-label"><div>PyTorch</div><div><strong>90%</strong></div></div>
-            <div class="bar-track"><div class="bar-fill" data-val="90"></div></div>
+            <div class="bar-label"><div>PyTorch</div><div><strong>95%</strong></div></div>
+            <div class="bar-track"><div class="bar-fill" data-val="95"></div></div>
 
             <div class="bar-label"><div>Transformers</div><div><strong>95%</strong></div></div>
             <div class="bar-track"><div class="bar-fill" data-val="95"></div></div>
@@ -492,8 +473,6 @@
     <footer>© 2025 Ankush Patil — Portfolio</footer>
   </main>
 
-  <!-- floating email (WORKING) -->
-  <a class="floating-email" id="floatingEmail" href="mailto:ankpatil1203@gmail.com" aria-label="Email Ankush" tabindex="0">✉️</a>
 
   <!-- back to top -->
   <div tabindex="0" class="to-top" id="toTop" role="button" aria-label="Back to top">↑</div>
