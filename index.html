@@ -2,42 +2,136 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Ankush Patil — ML/NLP Portfolio</title>
+  <title>Ankush Patil — ML/NLP Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
-    body { font-family: Arial, sans-serif; max-width: 900px; margin: auto; padding: 20px; }
-    h1 { font-size: 32px; margin-bottom: 5px; }
-    h2 { margin-top: 40px; }
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+      color: #222;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
+    .subtitle {
+      color: #555;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    nav a {
+      margin-right: 18px;
+      text-decoration: none;
+      color: #0078ff;
+      font-weight: 500;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    h2 {
+      margin-top: 45px;
+      font-size: 26px;
+      border-left: 6px solid #0078ff;
+      padding-left: 10px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    .project-card h3 {
+      margin-top: 0;
+    }
+    .project-card a {
+      color: #0078ff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 20px 0;
+      font-size: 15px;
+      color: #555;
+    }
   </style>
 </head>
+
 <body>
+  <div class="container">
 
-  <h1>Ankush Patil — ML / NLP Engineer</h1>
-  <p>LLM Fine-tuning • RAG • Transformers • PyTorch • Hugging Face</p>
+    <h1>Ankush Patil — ML / NLP Engineer</h1>
+    <p class="subtitle">LLM Fine-tuning • RAG • Transformers • PyTorch • Hugging Face</p>
 
-  <p>
-    <a href="resume.pdf">Download Resume</a> |
-    <a href="#projects">Projects</a> |
-    <a href="#contact">Contact</a>
-  </p>
+    <nav>
+      <a href="resume.pdf">Resume</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  <h2 id="projects">Projects</h2>
+    <h2 id="projects">Projects</h2>
 
-  <h3>LLaMA Fine-tuning for Wikipedia QA</h3>
-  <p>LoRA + RAG pipeline for domain QA. <strong>+12% accuracy gain.</strong>
-  <a href="YOUR_REPO_LINK">Repo</a> | <a href="YOUR_DEMO_LINK">Demo</a></p>
+    <!-- Project 1 -->
+    <div class="project-card">
+      <h3>LLaMA Fine-tuning for Wikipedia QA</h3>
+      <p>
+        Built a domain-specific QA system using LoRA + RAG on LLaMA.  
+        Achieved <strong>+12% answer accuracy improvement</strong> over baseline retrieval.  
+      </p>
+      <p>
+        <a href="YOUR_GITHUB_LINK">GitHub Repo</a> • 
+        <a href="YOUR_DEMO_LINK">Live Demo</a>
+      </p>
+    </div>
 
-  <h3>Amazon Reviews NLP — Summaries</h3>
-  <a href="YOUR_GITHUB_LINK">Repo</a>
+    <!-- Project 2 -->
+    <div class="project-card">
+      <h3>Amazon Reviews NLP — Summaries & Sentiment</h3>
+      <p>
+        Complete end-to-end NLP workflow including EDA, preprocessing,  
+        TF-IDF classifiers, and abstractive summaries using BART.
+      </p>
+      <p><a href="YOUR_LINK">GitHub Repo</a></p>
+    </div>
 
-  <h3>Plant Disease Detection — ResNet18</h3>
-  <a href="YOUR_GITHUB_LINK">Repo</a>
+    <!-- Project 3 -->
+    <div class="project-card">
+      <h3>Plant Disease Detection — ResNet18</h3>
+      <p>
+        Trained and optimized a deep-learning classifier using ResNet18  
+        to identify plant leaf diseases with high accuracy.
+      </p>
+      <p><a href="YOUR_LINK">GitHub Repo</a></p>
+    </div>
 
-  <h2 id="contact">Contact</h2>
-  <p>Email: yourmail@gmail.com<br>
-     LinkedIn: https://linkedin.com/in/... <br>
-     GitHub: https://github.com/Ankush-Patil99
-  </p>
+    <h2 id="contact">Contact</h2>
+    <p>Email: <a href="mailto:yourmail@gmail.com">yourmail@gmail.com</a><br>
+       LinkedIn: <a href="https://linkedin.com/in/...">linkedin.com/in/...</a><br>
+       GitHub: <a href="https://github.com/Ankush-Patil99">github.com/Ankush-Patil99</a>
+    </p>
 
+    <footer>
+      © 2025 Ankush Patil — Portfolio Website
+    </footer>
+
+  </div>
 </body>
 </html>
+
