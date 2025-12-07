@@ -6,153 +6,267 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
+    /* ---------------- Global Styles ---------------- */
+    :root {
+      --primary: #0078ff;
+      --bg: #fafafa;
+      --text-dark: #222;
+      --text-light: #555;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: "Segoe UI", Arial, sans-serif;
-      background: #fafafa;
+      background: var(--bg);
       margin: 0;
       padding: 0;
-      color: #222;
+      color: var(--text-dark);
       line-height: 1.6;
     }
+
+    /* ---------------- Container ---------------- */
     .container {
-      max-width: 900px;
+      max-width: 950px;
       margin: auto;
       padding: 40px 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
     }
+
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---------------- Header ---------------- */
     h1 {
       font-size: 36px;
       font-weight: 700;
       margin-bottom: 5px;
     }
     .subtitle {
-      color: #555;
+      color: var(--text-light);
       font-size: 18px;
       margin-bottom: 20px;
     }
+
+    /* ---------------- Navbar ---------------- */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      padding: 10px 0;
+      z-index: 10;
+      border-bottom: 1px solid #e5e5e5;
+    }
     nav a {
-      margin-right: 18px;
+      margin-right: 20px;
       text-decoration: none;
-      color: #0078ff;
-      font-weight: 500;
+      color: var(--primary);
+      font-weight: 600;
     }
     nav a:hover {
       text-decoration: underline;
     }
+
+    /* ---------------- Section Headers ---------------- */
     h2 {
       margin-top: 45px;
       font-size: 26px;
-      border-left: 6px solid #0078ff;
-      padding-left: 10px;
+      border-left: 6px solid var(--primary);
+      padding-left: 12px;
+      color: var(--text-dark);
     }
+
+    /* ---------------- Skills Section ---------------- */
+    .skills span {
+      display: inline-block;
+      background: #e8f0fe;
+      padding: 8px 14px;
+      margin: 6px;
+      border-radius: 6px;
+      font-size: 15px;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    /* ---------------- Project Cards ---------------- */
     .project-card {
       background: white;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      padding: 20px 25px;
+      margin: 25px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
     .project-card h3 {
       margin-top: 0;
     }
     .project-card a {
-      color: #0078ff;
+      color: var(--primary);
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
     }
     .project-card a:hover {
       text-decoration: underline;
     }
+
+    /* ---------------- Back to Top Button ---------------- */
+    .back-to-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--primary);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 50%;
+      font-size: 20px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      transition: opacity 0.3s ease;
+    }
+    .back-to-top:hover {
+      opacity: 0.8;
+    }
+
+    /* ---------------- Footer ---------------- */
     footer {
-      margin-top: 50px;
+      margin-top: 60px;
       padding: 20px 0;
-      font-size: 15px;
-      color: #555;
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-light);
+      border-top: 1px solid #eee;
     }
   </style>
 </head>
 
 <body>
+  <nav>
+    <div class="container">
+      <a href="resume.pdf">Resume</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
   <div class="container">
 
+    <!-- ---------------- Header ---------------- -->
     <h1>Ankush Patil — ML / NLP Engineer</h1>
     <p class="subtitle">LLM Fine-tuning • RAG • Transformers • PyTorch • Hugging Face</p>
 
-    <nav>
-      <a href="Resume.pdf">Resume</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <!-- ---------------- Skills ---------------- -->
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>Python</span><span>PyTorch</span><span>Transformers</span><span>Hugging Face</span>
+      <span>RAG</span><span>LLM Fine-Tuning</span><span>Deep Learning</span>
+      <span>Machine Learning</span><span>Scikit-Learn</span><span>Docker</span>
+      <span>Data Visualization</span><span>AWS</span><span>SQL</span>
+    </div>
 
+    <!-- ---------------- Projects ---------------- -->
     <h2 id="projects">Projects</h2>
 
-    <!-- PROJECT CARDS START -->
-
+    <!-- PROJECT 1 -->
     <div class="project-card">
       <h3>Wikipedia → LLaMA Fine-Tuning (RAG + LoRA)</h3>
-      <p>Built a full RAG pipeline with optimized chunking + embeddings and fine-tuned LLaMA using LoRA for factual QA.<br>
-      <strong>Results:</strong> ROUGE-1: 0.033 • ROUGE-L: 0.024 • Significant training-loss reduction.</p>
+      <p>
+        Complete RAG system with chunking, embeddings, FAISS retrieval + LoRA fine-tuning of LLaMA.
+        <strong>Results:</strong> ROUGE-1: 0.033 • ROUGE-L: 0.024.
+      </p>
       <a href="https://github.com/Ankush-Patil99/wikipedia-rag-llama-finetuning">GitHub Repo</a>
     </div>
 
+    <!-- PROJECT 2 -->
     <div class="project-card">
       <h3>Transformer Hindi ↔ English Translation (From Scratch)</h3>
-      <p>Implemented a full Transformer Encoder–Decoder with custom attention, masking, positional encoding, and beam search.<br>
-      <strong>Result:</strong> BLEU 49.76; deployed on Hugging Face.</p>
+      <p>
+        Fully custom Transformer model (attention, masking, positional encoding, beam search).
+        <strong>BLEU 49.76</strong> on Hindi→English; deployed on Hugging Face.
+      </p>
       <a href="https://github.com/Ankush-Patil99/transformer-seq2seq-from-scratch">GitHub Repo</a>
     </div>
 
+    <!-- PROJECT 3 -->
     <div class="project-card">
       <h3>Amazon Reviews NLP Analysis (3M+ Reviews)</h3>
-      <p>Complete NLP pipeline for sentiment, aspect mining, topic modeling, and summarization (BART/T5).</p>
+      <p>Sentiment analysis, aspect mining, topic modeling, and BART/T5 summarization at scale.</p>
       <a href="https://github.com/Ankush-Patil99/amazon-reviews-nlp-analysis">GitHub Repo</a>
     </div>
 
+    <!-- PROJECT 4 -->
     <div class="project-card">
       <h3>SMS Spam Classification — Naive Bayes, GDA, Logistic Regression</h3>
-      <p>TF-IDF + classical ML pipeline identifying spam patterns with strong recall on noisy text.</p>
+      <p>TF-IDF + classical ML pipeline identifying spam patterns with strong recall.</p>
       <a href="https://github.com/Ankush-Patil99/spam-classification-bayes-gda-logreg">GitHub Repo</a>
     </div>
 
+    <!-- PROJECT 5 -->
     <div class="project-card">
       <h3>Plant Disease Detection — ResNet18</h3>
-      <p>ResNet18 model with augmentation + OneCycleLR; <strong>38 disease classes</strong> with Grad-CAM interpretability.</p>
+      <p>
+        ResNet18 with augmentation + OneCycleLR. 
+        <strong>38 disease classes</strong> with Grad-CAM explanations.
+      </p>
       <a href="https://github.com/Ankush-Patil99/plant-disease-detection-resnet18">GitHub Repo</a>
     </div>
 
+    <!-- PROJECT 6 -->
     <div class="project-card">
       <h3>Heart Stroke Prediction System</h3>
-      <p>End-to-end ML pipeline with feature engineering, model comparison, and imbalance handling.</p>
+      <p>End-to-end ML pipeline with feature engineering and imbalance handling.</p>
       <a href="https://github.com/Ankush-Patil99/Heart-Stroke-Prediction-ML">GitHub Repo</a>
     </div>
 
+    <!-- PROJECT 7 -->
     <div class="project-card">
-      <h3>Credit Card Fraud Detection — Classical ML + Anomaly Models</h3>
-      <p>Hybrid anomaly detection using PCA, UMAP, KMeans, GMM, DBSCAN, Isolation Forest, LOF.<br>
-      <strong>Best model:</strong> Isolation Forest.</p>
+      <h3>Credit Card Fraud Detection — Anomaly Models</h3>
+      <p>UMAP, PCA, KMeans, GMM, DBSCAN, LOF, Isolation Forest.
+        <strong>Best model: Isolation Forest</strong>.
+      </p>
       <a href="https://github.com/Ankush-Patil99/credit-card-fraud-detection-anomaly-models">GitHub Repo</a>
     </div>
 
+    <!-- PROJECT 8 -->
     <div class="project-card">
       <h3>Student Performance & Ranking System</h3>
-      <p>Regression-based academic score predictor using PCA, SVM, Gradient Boosting, stacking.<br>
-      <strong>Result:</strong> R² = 0.90</strong></p>
+      <p>Regression-based model with PCA, SVM, Gradient Boosting, stacking.
+        <strong>R² = 0.90</strong>.
+      </p>
       <a href="https://github.com/Ankush-Patil99/student-performance-ml-project">GitHub Repo</a>
     </div>
 
-    <!-- PROJECT CARDS END -->
-
+    <!-- ---------------- Contact ---------------- -->
     <h2 id="contact">Contact</h2>
+
     <p>
       <strong>Ankush Patil</strong><br>
-      Machine Learning & NLP Engineer <br><br>
-
+      Machine Learning & NLP Engineer<br><br>
       📧 Email: <a href="mailto:ankpatil1203@gmail.com">ankpatil1203@gmail.com</a><br>
-      💼 LinkedIn: <a href="https://www.linkedin.com/in/ankush-patil-48989739a">linkedin.com/in/ankush-patil-48989739a</a><br>
-      🌐 GitHub: <a href="https://github.com/Ankush-Patil99">github.com/Ankush-Patil99</a>
+      💼 LinkedIn: 
+      <a href="https://www.linkedin.com/in/ankush-patil-48989739a">
+        linkedin.com/in/ankush-patil-48989739a
+      </a><br>
+      🌐 GitHub: 
+      <a href="https://github.com/Ankush-Patil99">
+        github.com/Ankush-Patil99
+      </a>
     </p>
 
     <footer>© 2025 Ankush Patil — Portfolio Website</footer>
 
   </div>
+
+  <!-- Back to top button -->
+  <a href="#" class="back-to-top">↑</a>
+
 </body>
 </html>
