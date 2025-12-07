@@ -1,515 +1,490 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Ankush Patil — ML/NLP Engineer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ankush Patil — ML & NLP Engineer. LLM fine-tuning, RAG, Transformers, PyTorch. Portfolio.">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Ankush Patil — ML / NLP Engineer</title>
+<meta name="description" content="Portfolio — Ankush Patil. LLM fine-tuning, RAG, Transformers, PyTorch.">
 
-  <style>
-    :root{
-      --bg: #fafafa;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #555;
-      --primary: #0066ff;
-      --accent: #e8f0fe;
-      --shadow: 0 8px 20px rgba(15,23,42,0.08);
-      --glass: rgba(255,255,255,0.6);
-    }
-    [data-theme="dark"]{
-      --bg: #0b1020;
-      --card: #0f1724;
-      --text: #e6eef8;
-      --muted: #a8b3c8;
-      --primary: #58a6ff;
-      --accent: rgba(24,58,102,0.12);
-      --shadow: 0 10px 30px rgba(2,6,23,0.6);
-      --glass: rgba(255,255,255,0.02);
-    }
+<style>
+  /* ---------- Theme variables ---------- */
+  :root{
+    --bg:#0b1020;          /* base background (dark mode default) */
+    --panel:#0f1724;
+    --text:#e6eef8;
+    --muted:#a8b3c8;
+    --primary:#58a6ff;
+    --card-shadow: 0 12px 30px rgba(2,8,23,0.5);
+    --glass: rgba(255,255,255,0.03);
+  }
+  /* light theme overrides */
+  :root[data-theme="light"]{
+    --bg: #f8fbff;
+    --panel: #ffffff;
+    --text: #0b1724;
+    --muted: #475569;
+    --primary: #0066ff;
+    --card-shadow: 0 8px 20px rgba(15,23,42,0.06);
+    --glass: rgba(255,255,255,0.6);
+  }
 
-    html{scroll-behavior:smooth}
-    *{box-sizing:border-box}
-    body{
-      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      margin:0;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
+  /* ---------- global ---------- */
+  html{scroll-behavior:smooth}
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    min-height:100vh;
+    font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow-y:scroll;
+  }
 
-    /* page container */
-    .site {
-      max-width:980px;
-      margin:0 auto;
-      padding:28px;
-    }
+  /* ---------- animated nebula background ---------- */
+  /* layered gradients + animated radial blobs + subtle noise */
+  .bg-wrap{
+    position:fixed; inset:0; z-index:-2; pointer-events:none; overflow:hidden;
+    background: radial-gradient(1200px 500px at 10% 20%, rgba(88,166,255,0.08), transparent 15%),
+                radial-gradient(900px 360px at 90% 60%, rgba(108,33,255,0.07), transparent 15%),
+                radial-gradient(600px 300px at 50% 80%, rgba(255,80,140,0.035), transparent 12%),
+                linear-gradient(180deg, rgba(2,6,23,0.87), rgba(8,12,25,0.95));
+  }
+  :root[data-theme="light"] .bg-wrap{
+    background: radial-gradient(800px 300px at 10% 15%, rgba(0,102,255,0.06), transparent 10%),
+                radial-gradient(700px 300px at 85% 65%, rgba(120,33,255,0.05), transparent 12%),
+                linear-gradient(180deg, #f7fbff, #eef6ff);
+  }
 
-    /* navbar */
-    nav.top {
-      position:sticky;
-      top:0;
-      backdrop-filter: blur(6px);
-      background: linear-gradient(180deg, var(--bg), rgba(255,255,255,0));
-      z-index:60;
-      border-bottom: 1px solid rgba(0,0,0,0.04);
-    }
-    nav .inner {
-      display:flex;
-      align-items:center;
-      gap:18px;
-      justify-content:space-between;
-      max-width:980px;
-      margin:0 auto;
-      padding:12px 20px;
-    }
-    .brand { font-weight:700; font-size:18px; color:var(--text) }
-    .nav-links a { color:var(--primary); text-decoration:none; margin-right:14px; font-weight:600; }
-    .nav-right { display:flex; gap:10px; align-items:center }
+  .nebula {
+    position:absolute; width:250%; height:250%; left:-75%; top:-60%;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(88,166,255,0.16), transparent 10%),
+      radial-gradient(circle at 70% 70%, rgba(160,50,255,0.12), transparent 10%),
+      radial-gradient(circle at 60% 30%, rgba(255,100,160,0.06), transparent 8%);
+    filter: blur(60px);
+    opacity:0.95;
+    animation: floatNeb 18s linear infinite;
+    mix-blend-mode:screen;
+  }
+  @keyframes floatNeb {
+    0%{transform:translate3d(0,0,0) scale(1)}
+    50%{transform:translate3d(6%,3%,0) scale(1.02)}
+    100%{transform:translate3d(0,0,0) scale(1)}
+  }
+  .noise {
+    position:fixed; inset:0; z-index:-1; opacity:0.04; pointer-events:none;
+    background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 3px 3px;
+    mix-blend-mode:overlay;
+  }
 
-    .btn-toggle {
-      border:0; background:transparent; cursor:pointer; padding:6px 8px; border-radius:8px;
-      color:var(--muted); font-weight:600;
-    }
+  /* ---------- layout container ---------- */
+  .site { max-width:980px; margin:0 auto; padding:20px; }
 
-    header { padding:24px 20px 8px 20px; }
-    h1 { margin:0; font-size:34px; letter-spacing:-0.2px; }
-    .subtitle { color:var(--muted); margin-top:8px; font-size:15px; }
+  /* ---------- nav ---------- */
+  nav.top {
+    position:sticky; top:0; z-index:40; backdrop-filter: blur(6px);
+    background: linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0));
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+  }
+  :root[data-theme="light"] nav.top{
+    background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.6));
+    border-bottom:1px solid rgba(0,0,0,0.04);
+  }
+  .nav-inner { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:12px 20px; max-width:980px; margin:0 auto; }
+  .brand { font-weight:700; font-size:16px; color:var(--text) }
+  .nav-links a { color:var(--primary); font-weight:600; text-decoration:none; margin-right:14px }
+  .nav-right { display:flex; align-items:center; gap:8px }
+  .theme-btn { background:transparent; border:0; color:var(--muted); font-size:16px; cursor:pointer; padding:6px 8px; border-radius:8px }
 
-    /* skills */
-    .skills-row { margin-top:18px; display:flex; flex-wrap:wrap; gap:8px; }
-    .skill-badge { background:var(--accent); color:var(--primary); padding:8px 12px; border-radius:999px; font-weight:600; font-size:13px; }
+  /* ---------- hero (first screen) ---------- */
+  .hero { display:flex; flex-direction:column; gap:12px; padding:36px 20px; }
+  h1 { margin:0; font-size:34px; letter-spacing:-0.3px; }
+  .role { color:var(--muted); font-size:15px; }
+  .cta-row { margin-top:10px; display:flex; gap:12px; align-items:center }
+  .btn-primary { background: linear-gradient(90deg,var(--primary), #33a1ff); color:white; padding:10px 14px; border-radius:8px; text-decoration:none; font-weight:700 }
+  .btn-outline { border:1px solid rgba(255,255,255,0.06); background:transparent; color:var(--muted); padding:8px 12px; border-radius:8px; text-decoration:none }
 
-    /* layout */
-    .section { margin-top:28px; }
-    h2.section-title {
-      display:flex; align-items:center; gap:12px; font-size:20px; border-left:4px solid var(--primary); padding-left:12px;
-    }
+  /* ---------- about ---------- */
+  .about-card { background:var(--panel); border-radius:12px; padding:18px; box-shadow:var(--card-shadow); border:1px solid var(--glass); color:var(--muted) }
+  .about-card p { margin:0; line-height:1.6 }
 
-    /* about */
-    .about { background:var(--card); padding:18px; border-radius:10px; box-shadow:var(--shadow); }
+  /* ---------- featured block ---------- */
+  .featured { margin-top:18px; display:flex; gap:18px; align-items:flex-start; }
+  .featured .thumb { width:120px; height:86px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:800; color:var(--primary) }
+  .featured .meta { flex:1 }
+  .badge { display:inline-block; padding:4px 8px; background:linear-gradient(90deg,var(--primary),#33a1ff); color:white; border-radius:999px; font-weight:700; font-size:12px; margin-left:10px }
 
-    /* projects */
-    .project-card {
-      display:flex; gap:16px; align-items:flex-start;
-      background:var(--card);
-      padding:16px;
-      border-radius:10px;
-      box-shadow:var(--shadow);
-      margin:18px 0;
-      transform:translateY(0);
-      transition:transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s;
-      opacity:0; will-change:transform,opacity;
-    }
-    .project-card.visible { opacity:1; transform: translateY(0); }
-    .project-card:hover { transform:translateY(-8px); box-shadow: 0 20px 40px rgba(2,6,23,0.12); }
+  /* ---------- projects batches ---------- */
+  .batches { margin-top:22px; display:flex; flex-direction:column; gap:14px; }
+  .batch { display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
+  @media (max-width:860px){ .batch { grid-template-columns: 1fr } }
 
-   .thumb {
-  min-width: 86px;
-  height: 68px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: var(--primary);
-  font-weight: 700;
-  background: var(--card);
-  border: 1px solid rgba(255,255,255,0.07);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
+  .project-card {
+    display:flex; gap:12px; align-items:flex-start; background:var(--panel);
+    border-radius:10px; padding:14px; box-shadow:var(--card-shadow);
+    border:1px solid var(--glass); transform:translateY(12px); opacity:0; transition:all .6s cubic-bezier(.2,.9,.3,1);
+  }
+  .project-card.visible { transform:translateY(0); opacity:1 }
+  .project-thumb { width:76px; height:56px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--primary); background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02)); flex-shrink:0 }
+  .project-body h3 { margin:0; font-size:15px }
+  .project-body p { margin:8px 0 10px 0; color:var(--muted); font-size:14px; line-height:1.5 }
+  .project-links a { color:var(--primary); font-weight:700; text-decoration:none; font-size:14px }
 
-    [data-theme="dark"] .thumb { border:1px solid rgba(255,255,255,0.04) }
+  /* ---------- skills area ---------- */
+  .skills-area { display:flex; gap:18px; margin-top:18px; align-items:flex-start; flex-wrap:wrap }
+  .skill-bars { flex:1; min-width:260px; display:flex; flex-direction:column; gap:12px; }
+  .bar-label { display:flex; justify-content:space-between; align-items:center; font-size:13px; color:var(--muted) }
+  .bar-track { width:100%; height:10px; background: rgba(255,255,255,0.04); border-radius:999px; overflow:hidden }
+  .bar-fill { height:10px; width:0%; background: linear-gradient(90deg,var(--primary),#33a1ff); border-radius:999px; transition: width 1s cubic-bezier(.2,.9,.3,1) }
 
-    .project-body { flex:1 }
-    .project-body h3 { margin:0; font-size:16px }
-    .project-body p { margin:8px 0 12px 0; color:var(--muted); line-height:1.45; font-size:14px }
-    .project-links a { color:var(--primary); text-decoration:none; font-weight:600; margin-right:12px; font-size:14px }
+  .graph-box { width:340px; min-width:220px; background:var(--panel); padding:12px; border-radius:10px; box-shadow:var(--card-shadow); border:1px solid var(--glass) }
 
-    /* contact */
-    .contact { display:flex; gap:14px; align-items:flex-start; padding:14px; border-radius:10px; background:var(--card); box-shadow:var(--shadow) }
-    .contact .left { min-width:120px; font-weight:700 }
-    .contact .right a { display:block; color:var(--primary); text-decoration:none; margin-bottom:6px }
+  /* ---------- contact ---------- */
+  .contact-card { margin-top:18px; background:var(--panel); padding:14px; border-radius:10px; box-shadow:var(--card-shadow); border:1px solid var(--glass) }
+  .contact-grid { display:flex; gap:12px; flex-wrap:wrap }
+  .contact-grid a { color:var(--primary); text-decoration:none; font-weight:600 }
 
-    /* skill bars / graph */
-    .skill-bars { display:flex; gap:18px; margin-top:14px; flex-wrap:wrap }
-    .skill-bar { flex-basis: 48%; background:var(--card); padding:12px; border-radius:10px; box-shadow:var(--shadow) }
-    .skill-row { display:flex; align-items:center; justify-content:space-between; margin:10px 0; gap:10px }
-    .bar-track { background: rgba(0,0,0,0.06); height:10px; border-radius:999px; overflow:hidden; flex:1; margin-left:12px }
-    .bar-fill { height:10px; width:0%; background:linear-gradient(90deg,var(--primary),#33a1ff); border-radius:999px; transition:width 1s cubic-bezier(.2,.9,.3,1) }
+  /* ---------- footer ---------- */
+  footer { margin-top:28px; color:var(--muted); font-size:13px; text-align:center; padding-bottom:40px }
 
-    /* svg graph */
-    .graph { background:var(--card); padding:12px; border-radius:10px; box-shadow:var(--shadow); }
-    .tooltip { position:fixed; pointer-events:none; background:var(--card); color:var(--text); border-radius:6px; padding:6px 8px; font-size:13px; box-shadow:var(--shadow); display:none }
-
-    /* footer */
-    footer { margin-top:26px; color:var(--muted); text-align:center; padding-bottom:26px }
-
-    /* responsive */
-    @media (max-width:700px){
-      .skill-bar { flex-basis:100% }
-      .thumb{display:none}
-      .project-card{padding:12px}
-    }
-
-    /* small icons style */
-    .icon { width:18px; height:18px; vertical-align:middle; display:inline-block }
-  </style>
+  /* responsive tweaks */
+  @media (max-width:720px){
+    .nav-inner { padding:10px }
+    h1 { font-size:26px }
+    .hero { padding:18px 12px }
+    .graph-box { width:100% }
+  }
+</style>
 </head>
 <body>
-  <nav class="top" aria-label="top navigation">
-    <div class="inner" style="max-width:980px; margin:0 auto;">
-      <div style="display:flex;gap:14px;align-items:center">
+  <!-- background layers -->
+  <div class="bg-wrap" aria-hidden>
+    <div class="nebula" aria-hidden></div>
+  </div>
+  <div class="noise" aria-hidden></div>
+
+  <!-- site -->
+  <nav class="top" role="navigation">
+    <div class="nav-inner">
+      <div style="display:flex;align-items:center;gap:12px">
         <div class="brand">Ankush Patil — ML / NLP</div>
-        <div class="nav-links" style="margin-left:8px">
-          <a href="resume.pdf" target="_blank">Resume</a>
+        <div class="nav-links" aria-hidden>
           <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
           <a href="#contact">Contact</a>
         </div>
       </div>
 
       <div class="nav-right">
-        <button class="btn-toggle" id="themeToggle" title="Toggle dark mode">🌙</button>
+        <a class="btn-outline" href="resume.pdf" target="_blank">Download Resume</a>
+        <button id="themeToggle" class="theme-btn" title="Toggle theme">🌙</button>
       </div>
     </div>
   </nav>
 
-  <main class="site">
-
-    <!-- header -->
-    <header>
+  <main class="site" id="siteRoot">
+    <!-- HERO / FIRST PAGE -->
+    <section id="hero" class="hero" aria-label="hero">
       <h1>Ankush Patil — ML / NLP Engineer</h1>
-      <div class="subtitle">LLM Fine-tuning • RAG • Transformers • PyTorch • Hugging Face</div>
+      <div class="role">LLM Fine-tuning • RAG • Transformers • PyTorch • Hugging Face</div>
 
-      <!-- Skills badges -->
-      <div class="skills-row" style="margin-top:12px">
-        <span class="skill-badge">Python</span>
-        <span class="skill-badge">PyTorch</span>
-        <span class="skill-badge">Transformers</span>
-        <span class="skill-badge">Hugging Face</span>
-        <span class="skill-badge">RAG</span>
-        <span class="skill-badge">LLM Fine-Tuning</span>
-        <span class="skill-badge">Deep Learning</span>
-        <span class="skill-badge">Docker</span>
-        <span class="skill-badge">AWS</span>
-        <span class="skill-badge">SQL</span>
+      <div style="display:flex;gap:14px;align-items:center;margin-top:8px">
+        <a class="btn-primary" href="resume.pdf" target="_blank">Download Resume</a>
+        <a class="btn-outline" href="#about">About</a>
       </div>
-    </header>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <h2 class="section-title">About</h2>
-      <div class="about" style="margin-top:12px">
-        <p style="margin:0; color:var(--muted); line-height:1.5">
-          I’m a Machine Learning and NLP engineer focused on building production-ready LLM systems,
-          retrieval-augmented pipelines, and efficient deep-learning models. I enjoy turning research
-          ideas into reliable code and clean demos. Currently targeting roles in NLP / LLM engineering
-          where I can build scalable, real-world systems.
-        </p>
+      <div style="margin-top:18px" class="about-card" id="about">
+        <p>I build production-ready LLM systems, retrieval-augmented pipelines, and efficient deep-learning models.
+        I like turning research ideas into clean code and reproducible demos. Currently targeting NLP / LLM engineering roles with an emphasis on model fine-tuning, RAG systems, and deployable inference.</p>
       </div>
     </section>
 
-    <!-- skill bars + graph -->
-    <section class="section" id="skills">
-      <h2 class="section-title">Skills & Visual</h2>
-
-      <div class="skill-bars" style="margin-top:12px">
-        <div class="skill-bar" id="skillBars">
-          <div class="skill-row"><div>PyTorch</div><div> <strong>90%</strong></div></div>
-          <div class="bar-track"><div class="bar-fill" data-val="90"></div></div>
-
-          <div class="skill-row"><div>Transformers</div><div> <strong>88%</strong></div></div>
-          <div class="bar-track"><div class="bar-fill" data-val="95"></div></div>
-
-          <div class="skill-row"><div>Hugging Face</div><div> <strong>85%</strong></div></div>
-          <div class="bar-track"><div class="bar-fill" data-val="85"></div></div>
-
-          <div class="skill-row"><div>RAG / Retrieval</div><div> <strong>82%</strong></div></div>
-          <div class="bar-track"><div class="bar-fill" data-val="85"></div></div>
-
-          <div class="skill-row"><div>Computer Vision</div><div> <strong>78%</strong></div></div>
-          <div class="bar-track"><div class="bar-fill" data-val="85"></div></div>
-
-          <div class="skill-row"><div>Classical ML</div><div> <strong>80%</strong></div></div>
-          <div class="bar-track"><div class="bar-fill" data-val="95"></div></div>
-        </div>
-
-        <div class="graph" id="skillGraph" style="width:340px">
-          <!-- inline SVG graph inserted by JS -->
+    <!-- FEATURED -->
+    <section id="featured" class="section" aria-label="featured" style="margin-top:22px">
+      <div class="featured">
+        <div class="thumb" style="width:120px;height:86px; border-radius:10px; background:linear-gradient(180deg, rgba(88,166,255,0.08), rgba(0,0,0,0.02))">LLM</div>
+        <div class="meta">
+          <div style="display:flex;align-items:center;gap:12px">
+            <h3 style="margin:0">Featured — Wikipedia → LLaMA Fine-Tuning (RAG + LoRA)</h3>
+            <span class="badge">Featured</span>
+          </div>
+          <p style="margin:8px 0 0 0; color:var(--muted)">Complete RAG pipeline with chunking, FAISS retrieval, embeddings, and LoRA fine-tuning of LLaMA for domain QA. Results: ROUGE-1: 0.033 • ROUGE-L: 0.024.</p>
+          <div style="margin-top:10px"><a class="project-links" href="https://github.com/Ankush-Patil99/wikipedia-rag-llama-finetuning" target="_blank">GitHub Repo</a></div>
         </div>
       </div>
     </section>
 
-    <!-- projects -->
-    <section class="section" id="projects">
+    <!-- PROJECTS: BATCHES OF 4 -->
+    <section id="projects" class="section" aria-label="projects" style="margin-top:24px">
       <h2 class="section-title">Projects</h2>
 
-      <!-- Project 1 -->
-      <article class="project-card">
-        <div class="thumb" aria-hidden>
-          <!-- SVG thumbnail -->
-          <svg width="68" height="48" viewBox="0 0 68 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="68" height="48" rx="6" fill="url(#g1)"/>
-            <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#e6f0ff"/><stop offset="1" stop-color="#d7eaff"/></linearGradient></defs>
-            <text x="10" y="30" fill="#0752b8" font-weight="700" font-size="14">LLM</text>
-          </svg>
-        </div>
-        <div class="project-body">
-          <h3>Wikipedia → LLaMA Fine-Tuning (RAG + LoRA)</h3>
-          <p>Complete RAG system with chunking, embeddings, FAISS retrieval + LoRA fine-tuning of LLaMA. <strong>ROUGE-1: 0.033 • ROUGE-L: 0.024</strong></p>
-          <div class="project-links">
-            <a href="https://github.com/Ankush-Patil99/wikipedia-rag-llama-finetuning" target="_blank">GitHub Repo</a>
-          </div>
-        </div>
-      </article>
+      <!-- BATCH 1 -->
+      <div class="batches" id="batchesContainer">
+        <div class="batch" data-batch="1">
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div class="project-thumb">LLM</div>
+            <div class="project-body">
+              <h3>Wikipedia → LLaMA Fine-Tuning (RAG + LoRA)</h3>
+              <p>Complete RAG system with chunking, embeddings, FAISS retrieval + LoRA fine-tuning of LLaMA. <strong>ROUGE-1: 0.033 • ROUGE-L: 0.024</strong></p>
+              <div class="project-links"><a href="https://github.com/Ankush-Patil99/wikipedia-rag-llama-finetuning" target="_blank">GitHub Repo</a></div>
+            </div>
+          </article>
 
-      <!-- Project 2 -->
-      <article class="project-card">
-        <div class="thumb">
-          <svg width="68" height="48"><rect width="68" height="48" rx="6" fill="#fff0e6"/><text x="6" y="30" font-weight="700" fill="#b65a00">TR</text></svg>
-        </div>
-        <div class="project-body">
-          <h3>Transformer Hindi ↔ English Translation (From Scratch)</h3>
-          <p>Custom Transformer encoder-decoder (attention, masking, beam search). <strong>BLEU 49.76</strong> on Hindi→English; deployed on Hugging Face.</p>
-          <div class="project-links"><a href="https://github.com/Ankush-Patil99/transformer-seq2seq-from-scratch" target="_blank">GitHub Repo</a></div>
-        </div>
-      </article>
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div class="project-thumb">TR</div>
+            <div class="project-body">
+              <h3>Transformer Hindi ↔ English Translation</h3>
+              <p>From-scratch Transformer encoder-decoder with custom attention, masking and beam search. <strong>BLEU 49.76</strong>.</p>
+              <div class="project-links"><a href="https://github.com/Ankush-Patil99/transformer-seq2seq-from-scratch" target="_blank">GitHub Repo</a></div>
+            </div>
+          </article>
 
-      <!-- Project 3 -->
-      <article class="project-card">
-        <div class="thumb"><svg width="68" height="48"><rect width="68" height="48" rx="6" fill="#f0fff6"/><text x="8" y="30" font-weight="700" fill="#0b7a3f">AR</text></svg></div>
-        <div class="project-body">
-          <h3>Amazon Reviews NLP Analysis (3M+ Reviews)</h3>
-          <p>Sentiment analysis, aspect mining, topic modeling, and BART/T5 summarization at scale.</p>
-          <div class="project-links"><a href="https://github.com/Ankush-Patil99/amazon-reviews-nlp-analysis" target="_blank">GitHub Repo</a></div>
+          <!-- Project 3 -->
+          <article class="project-card">
+            <div class="project-thumb">AR</div>
+            <div class="project-body">
+              <h3>Amazon Reviews NLP Analysis (3M+ Reviews)</h3>
+              <p>Sentiment, aspect mining, topic modeling and BART/T5 summarization at scale.</p>
+              <div class="project-links"><a href="https://github.com/Ankush-Patil99/amazon-reviews-nlp-analysis" target="_blank">GitHub Repo</a></div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card">
+            <div class="project-thumb">SP</div>
+            <div class="project-body">
+              <h3>SMS Spam Classification — Naive Bayes, GDA, Logistic Regression</h3>
+              <p>TF-IDF + classical ML pipeline identifying spam tokens with robust recall on noisy text.</p>
+              <div class="project-links"><a href="https://github.com/Ankush-Patil99/spam-classification-bayes-gda-logreg" target="_blank">GitHub Repo</a></div>
+            </div>
+          </article>
         </div>
-      </article>
 
-      <!-- Project 4 -->
-      <article class="project-card">
-        <div class="thumb"><svg width="68" height="48"><rect width="68" height="48" rx="6" fill="#f6f7ff"/><text x="8" y="30" font-weight="700" fill="#2333a6">SP</text></svg></div>
-        <div class="project-body">
-          <h3>SMS Spam Classification — Naive Bayes, GDA, Logistic Regression</h3>
-          <p>TF-IDF + classical ML pipeline identifying spam patterns with strong recall.</p>
-          <div class="project-links"><a href="https://github.com/Ankush-Patil99/spam-classification-bayes-gda-logreg" target="_blank">GitHub Repo</a></div>
-        </div>
-      </article>
+        <!-- BATCH 2 -->
+        <div class="batch" data-batch="2">
+          <!-- Project 5 -->
+          <article class="project-card">
+            <div class="project-thumb">CV</div>
+            <div class="project-body">
+              <h3>Plant Disease Detection — ResNet18</h3>
+              <p>ResNet18 + augmentation + OneCycleLR. <strong>38 disease classes</strong> with Grad-CAM explanations.</p>
+              <div class="project-links"><a href="https://github.com/Ankush-Patil99/plant-disease-detection-resnet18" target="_blank">GitHub Repo</a></div>
+            </div>
+          </article>
 
-      <!-- Project 5 -->
-      <article class="project-card">
-        <div class="thumb"><svg width="68" height="48"><rect width="68" height="48" rx="6" fill="#fff7f0"/><text x="6" y="30" font-weight="700" fill="#b02e00">CV</text></svg></div>
-        <div class="project-body">
-          <h3>Plant Disease Detection — ResNet18</h3>
-          <p>ResNet18 with augmentation + OneCycleLR. <strong>38 disease classes</strong> with Grad-CAM explanations.</p>
-          <div class="project-links"><a href="https://github.com/Ankush-Patil99/plant-disease-detection-resnet18" target="_blank">GitHub Repo</a></div>
-        </div>
-      </article>
+          <!-- Project 6 -->
+          <article class="project-card">
+            <div class="project-thumb">HS</div>
+            <div class="project-body">
+              <h3>Heart Stroke Prediction System</h3>
+              <p>End-to-end ML pipeline with feature engineering and imbalanced-data handling for stroke risk prediction.</p>
+              <div class="project-links"><a href="https://github.com/Ankush-Patil99/Heart-Stroke-Prediction-ML" target="_blank">GitHub Repo</a></div>
+            </div>
+          </article>
 
-      <!-- Project 6 -->
-      <article class="project-card">
-        <div class="thumb"><svg width="68" height="48"><rect width="68" height="48" rx="6" fill="#eef6ff"/><text x="10" y="30" font-weight="700" fill="#0b57a6">HS</text></svg></div>
-        <div class="project-body">
-          <h3>Heart Stroke Prediction System</h3>
-          <p>End-to-end ML pipeline with feature engineering and imbalance handling for stroke risk prediction.</p>
-          <div class="project-links"><a href="https://github.com/Ankush-Patil99/Heart-Stroke-Prediction-ML" target="_blank">GitHub Repo</a></div>
-        </div>
-      </article>
+          <!-- Project 7 -->
+          <article class="project-card">
+            <div class="project-thumb">FR</div>
+            <div class="project-body">
+              <h3>Credit Card Fraud Detection — Anomaly Models</h3>
+              <p>UMAP, PCA, KMeans, GMM, DBSCAN, Isolation Forest and LOF. <strong>Best: Isolation Forest</strong>.</p>
+              <div class="project-links"><a href="https://github.com/Ankush-Patil99/credit-card-fraud-detection-anomaly-models" target="_blank">GitHub Repo</a></div>
+            </div>
+          </article>
 
-      <!-- Project 7 -->
-      <article class="project-card">
-        <div class="thumb"><svg width="68" height="48"><rect width="68" height="48" rx="6" fill="#fff9f0"/><text x="8" y="30" font-weight="700" fill="#b86a00">FR</text></svg></div>
-        <div class="project-body">
-          <h3>Credit Card Fraud Detection — Anomaly Models</h3>
-          <p>UMAP, PCA, KMeans, GMM, DBSCAN, LOF, Isolation Forest. <strong>Best model: Isolation Forest</strong>.</p>
-          <div class="project-links"><a href="https://github.com/Ankush-Patil99/credit-card-fraud-detection-anomaly-models" target="_blank">GitHub Repo</a></div>
-        </div>
-      </article>
-
-      <!-- Project 8 -->
-      <article class="project-card">
-        <div class="thumb"><svg width="68" height="48"><rect width="68" height="48" rx="6" fill="#f6fff9"/><text x="6" y="30" font-weight="700" fill="#0b7a3f">ST</text></svg></div>
-        <div class="project-body">
-          <h3>Student Performance & Ranking System</h3>
-          <p>Regression-based model using PCA, SVM, Gradient Boosting and stacking. <strong>R² = 0.90</strong>.</p>
-          <div class="project-links"><a href="https://github.com/Ankush-Patil99/student-performance-ml-project" target="_blank">GitHub Repo</a></div>
-        </div>
-      </article>
-
-    </section>
-
-    <!-- contact -->
-    <section class="section" id="contact" style="margin-top:18px">
-      <h2 class="section-title">Contact</h2>
-      <div class="contact" style="margin-top:12px">
-        <div class="left">Ankush Patil</div>
-        <div class="right">
-          <div style="color:var(--muted); margin-bottom:6px">Machine Learning & NLP Engineer</div>
-          <a href="mailto:ankpatil1203@gmail.com">
-            <!-- email icon -->
-            <svg class="icon" viewBox="0 0 24 24" fill="none" style="vertical-align:middle; margin-right:8px"><path d="M3 6.5v11A2.5 2.5 0 0 0 5.5 20h13A2.5 2.5 0 0 0 21 17.5v-11A2.5 2.5 0 0 0 18.5 4h-13A2.5 2.5 0 0 0 3 6.5z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            ankpatil1203@gmail.com
-          </a>
-          <a href="https://www.linkedin.com/in/ankush-patil-48989739a" target="_blank">
-            <!-- linkedin icon -->
-            <svg class="icon" viewBox="0 0 24 24" fill="none" style="vertical-align:middle; margin-right:8px"><path d="M4 4.5h16v15H4z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            linkedin.com/in/ankush-patil-48989739a
-          </a>
-          <a href="https://github.com/Ankush-Patil99" target="_blank">
-            <!-- github icon -->
-            <svg class="icon" viewBox="0 0 24 24" fill="none" style="vertical-align:middle; margin-right:8px"><path d="M12 2C7 2 4 5 4 9c0 3 2 5 4 6v2c0 .5-.5.5-1 1 0 0 1 0 2-1 2 1 4 1 6 0 1 1 2 1 2 1-.5-.5-.5-.5-.5-.5V15c2-1 4-3 4-6 0-4-3-7-8-7z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            github.com/Ankush-Patil99
-          </a>
+          <!-- Project 8 -->
+          <article class="project-card">
+            <div class="project-thumb">ST</div>
+            <div class="project-body">
+              <h3>Student Performance & Ranking System</h3>
+              <p>Regression-based predictor with PCA, SVM, Gradient Boosting and stacking. <strong>R² = 0.90</strong>.</p>
+              <div class="project-links"><a href="https://github.com/Ankush-Patil99/student-performance-ml-project" target="_blank">GitHub Repo</a></div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <footer>© 2025 Ankush Patil — Portfolio Website</footer>
+    <!-- SKILLS & VISUAL -->
+    <section id="skills" class="section" aria-label="skills">
+      <h2 class="section-title">Skills & Visual</h2>
+      <div class="skills-area">
+        <div class="skill-bars">
+          <div class="bar-label"><span>PyTorch</span><strong>90%</strong></div>
+          <div class="bar-track"><div class="bar-fill" data-val="90"></div></div>
+
+          <div class="bar-label"><span>Transformers</span><strong>88%</strong></div>
+          <div class="bar-track"><div class="bar-fill" data-val="88"></div></div>
+
+          <div class="bar-label"><span>Hugging Face</span><strong>85%</strong></div>
+          <div class="bar-track"><div class="bar-fill" data-val="85"></div></div>
+
+          <div class="bar-label"><span>RAG / Retrieval</span><strong>82%</strong></div>
+          <div class="bar-track"><div class="bar-fill" data-val="82"></div></div>
+
+          <div class="bar-label"><span>Computer Vision</span><strong>78%</strong></div>
+          <div class="bar-track"><div class="bar-fill" data-val="78"></div></div>
+
+          <div class="bar-label"><span>Classical ML</span><strong>80%</strong></div>
+          <div class="bar-track"><div class="bar-fill" data-val="80"></div></div>
+        </div>
+
+        <div class="graph-box" id="skillGraph"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section" aria-label="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-card">
+        <div style="display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap">
+          <div style="min-width:140px"><strong>Ankush Patil</strong><div style="color:var(--muted);margin-top:6px">Machine Learning & NLP Engineer</div></div>
+          <div style="flex:1">
+            <div class="contact-grid">
+              <a href="mailto:ankpatil1203@gmail.com">📧 ankpatil1203@gmail.com</a>
+              <a href="https://www.linkedin.com/in/ankush-patil-48989739a" target="_blank">🔗 linkedin.com/in/ankush-patil-48989739a</a>
+              <a href="https://github.com/Ankush-Patil99" target="_blank">🐙 github.com/Ankush-Patil99</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2025 Ankush Patil — Portfolio</footer>
   </main>
 
-  <div class="tooltip" id="tooltip"></div>
+  <!-- back to top -->
+  <a id="toTop" href="#" style="position:fixed; right:18px; bottom:18px; background:var(--primary); color:white; width:44px; height:44px; display:flex; align-items:center; justify-content:center; border-radius:8px; text-decoration:none; box-shadow:0 10px 26px rgba(2,8,23,0.35); z-index:60; opacity:0; transition:opacity .2s">↑</a>
 
-  <a class="back-to-top" href="#" title="Back to top" style="display:none; text-decoration:none; align-items:center; justify-content:center;">↑</a>
+<script>
+  /* ---------- theme toggle (auto default to dark if not set) ---------- */
+  const root = document.documentElement;
+  const stored = localStorage.getItem('site-theme');
+  if(stored) root.setAttribute('data-theme', stored);
+  else {
+    // default to dark for nebula look
+    const prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    if(prefers === 'light') root.setAttribute('data-theme','light');
+  }
+  const themeBtn = document.getElementById('themeToggle');
+  const updateBtn = ()=> {
+    const t = root.getAttribute('data-theme') === 'light' ? '🌙' : '☀️';
+    themeBtn.textContent = t;
+  };
+  updateBtn();
+  themeBtn.addEventListener('click', ()=>{
+    const cur = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    if(cur === 'light') root.setAttribute('data-theme','light'); else root.removeAttribute('data-theme');
+    localStorage.setItem('site-theme', cur === 'light' ? 'light' : 'dark');
+    updateBtn();
+  });
 
-  <script>
-    /* -------- theme toggle (persist) -------- */
-    const themeBtn = document.getElementById('themeToggle');
-    const root = document.documentElement;
-    const applied = localStorage.getItem('site-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    if(applied === 'dark') root.setAttribute('data-theme','dark');
-    themeBtn.textContent = applied === 'dark' ? '☀️' : '🌙';
-    themeBtn.addEventListener('click', ()=> {
-      const now = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', now === 'dark' ? 'dark' : '');
-      themeBtn.textContent = now === 'dark' ? '☀️' : '🌙';
-      localStorage.setItem('site-theme', now);
-    });
-
-    /* -------- fade-in & reveal for sections & cards -------- */
-    const obs = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          e.target.classList.add('visible');
-        }
-      });
-    }, {threshold:0.12});
-
-    document.querySelectorAll('.project-card').forEach(c=>{
-      c.style.transform = 'translateY(10px)';
-      obs.observe(c);
-    });
-
-    document.querySelectorAll('.section').forEach(s=> obs.observe(s));
-
-    /* -------- animate skill bars when visible -------- */
-    const bars = document.querySelectorAll('.bar-fill');
-    const barObserver = new IntersectionObserver((entries)=>{
-      entries.forEach(ent=>{
-        if(ent.isIntersecting){
-          const el = ent.target;
-          const val = el.getAttribute('data-val');
-          el.style.width = val + '%';
-        }
-      });
-    }, {threshold:0.3});
-    bars.forEach(b=> barObserver.observe(b));
-
-    /* -------- back to top button -------- */
-    const topBtn = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', ()=>{
-      if(window.scrollY > 300) topBtn.style.display = 'flex';
-      else topBtn.style.display = 'none';
-    });
-    topBtn.addEventListener('click',(e)=>{ e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); });
-
-    /* -------- simple interactive SVG bar graph for skills -------- */
-    (function renderGraph(){
-      const data = [
-        {k:'PyTorch', v:90},
-        {k:'Transformers', v:88},
-        {k:'Hugging Face', v:85},
-        {k:'RAG', v:82},
-        {k:'CV', v:78},
-        {k:'Classical ML', v:80},
-      ];
-      const svgNS = 'http://www.w3.org/2000/svg';
-      const wrapper = document.getElementById('skillGraph');
-      const w = 320, h = 220, pad = 18;
-      const svg = document.createElementNS(svgNS,'svg');
-      svg.setAttribute('width', w);
-      svg.setAttribute('height', h);
-      svg.style.display='block';
-      const max = 100;
-      const bw = (w - pad*2) / data.length;
-      data.forEach((d,i)=>{
-        const x = pad + i * bw + 6;
-        const barH = (d.v / max) * (h - pad*3);
-        const y = h - pad - barH;
-        // bar
-        const rect = document.createElementNS(svgNS,'rect');
-        rect.setAttribute('x', x);
-        rect.setAttribute('y', y);
-        rect.setAttribute('width', Math.max(18, bw - 18));
-        rect.setAttribute('height', 0);
-        rect.setAttribute('rx', 4);
-        rect.setAttribute('fill', 'url(#grad'+i+')');
-        rect.style.transition = 'height 800ms ease, y 800ms ease';
-        rect.addEventListener('mouseenter', (ev)=> showTip(ev, d.k+': '+d.v+'%'));
-        rect.addEventListener('mouseleave', hideTip);
-        svg.appendChild(rect);
-        // animate after append
-        setTimeout(()=>{ rect.setAttribute('height', barH); rect.setAttribute('y', y); }, 150 + i*80);
-
-        // label
-        const txt = document.createElementNS(svgNS,'text');
-        txt.setAttribute('x', x + 6);
-        txt.setAttribute('y', h - pad + 14);
-        txt.setAttribute('font-size', 11);
-        txt.setAttribute('fill', 'var(--muted)');
-        txt.textContent = d.k.split(' ')[0];
-        svg.appendChild(txt);
-
-        // gradient
-        const defs = document.createElementNS(svgNS,'defs');
-        const grad = document.createElementNS(svgNS,'linearGradient');
-        grad.setAttribute('id','grad'+i);
-        grad.setAttribute('x1','0'); grad.setAttribute('x2','0'); grad.setAttribute('y1','0'); grad.setAttribute('y2','1');
-        const stop1 = document.createElementNS(svgNS,'stop'); stop1.setAttribute('offset','0%'); stop1.setAttribute('stop-color','#58a6ff');
-        const stop2 = document.createElementNS(svgNS,'stop'); stop2.setAttribute('offset','100%'); stop2.setAttribute('stop-color','#33a1ff');
-        grad.appendChild(stop1); grad.appendChild(stop2);
-        defs.appendChild(grad);
-        svg.appendChild(defs);
-      });
-      wrapper.appendChild(svg);
-    })();
-
-    /* tooltip for graph */
-    const tip = document.getElementById('tooltip');
-    function showTip(e, text){
-      tip.style.display='block';
-      tip.textContent = text;
-      const x = e.clientX + 12;
-      const y = e.clientY + 12;
-      tip.style.left = x + 'px';
-      tip.style.top = y + 'px';
-    }
-    function hideTip(){ tip.style.display='none'; }
-
-    // move tooltip with mouse
-    document.addEventListener('mousemove', function(e){
-      if(tip.style.display === 'block'){
-        tip.style.left = (e.clientX + 12) + 'px';
-        tip.style.top = (e.clientY + 12) + 'px';
+  /* ---------- batches reveal logic (4-per-batch) ---------- */
+  const batches = document.querySelectorAll('.batch');
+  const batchObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(ent=>{
+      if(ent.isIntersecting){
+        const batch = ent.target;
+        // reveal all project cards inside this batch with small stagger
+        const cards = batch.querySelectorAll('.project-card');
+        cards.forEach((c,i)=> setTimeout(()=> c.classList.add('visible'), i*90));
       }
     });
+  }, {threshold:0.18});
+  batches.forEach(b=> batchObserver.observe(b));
 
-    // On load: mark project-cards visible in view
-    window.addEventListener('load', ()=>{
-      document.querySelectorAll('.project-card').forEach((c,i)=>{
-        setTimeout(()=> { if(c.getBoundingClientRect().top < window.innerHeight) c.classList.add('visible'); }, 80 + i*60);
+  /* ---------- skill bars animate ---------- */
+  document.querySelectorAll('.bar-fill').forEach(bar=>{
+    const val = bar.getAttribute('data-val');
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) { bar.style.width = val + '%'; obs.disconnect(); }
       });
+    }, {threshold:0.3});
+    obs.observe(bar);
+  });
+
+  /* ---------- interactive SVG graph ---------- */
+  (function renderGraph(){
+    const data = [
+      {k:'PyTorch', v:90},{k:'Transformers', v:88},{k:'Hugging Face', v:85},
+      {k:'RAG', v:82},{k:'CV', v:78},{k:'Classical ML', v:80}
+    ];
+    const box = document.getElementById('skillGraph');
+    const w = box.clientWidth || 320, h=220, pad=18;
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(svgNS,'svg');
+    svg.setAttribute('width','100%'); svg.setAttribute('height', h);
+    svg.style.display='block';
+    const max = 100;
+    const bw = (w - pad*2) / data.length;
+    data.forEach((d,i)=>{
+      const x = pad + i * bw + 6;
+      const barW = Math.max(18, bw - 20);
+      const barH = (d.v / max) * (h - pad*2);
+      const y = h - pad - barH;
+      const rect = document.createElementNS(svgNS,'rect');
+      rect.setAttribute('x', x); rect.setAttribute('y', h - pad); rect.setAttribute('width', barW); rect.setAttribute('height',0);
+      rect.setAttribute('rx',6);
+      rect.setAttribute('fill','rgba(88,166,255,0.95)');
+      rect.style.transition = 'height 700ms ease, y 700ms ease';
+      rect.addEventListener('mouseenter', (ev)=> showTooltip(ev, d.k + ': ' + d.v + '%'));
+      rect.addEventListener('mouseleave', hideTooltip);
+      svg.appendChild(rect);
+
+      const label = document.createElementNS(svgNS,'text');
+      label.setAttribute('x', x + 6); label.setAttribute('y', h - 6); label.setAttribute('font-size',11);
+      label.setAttribute('fill', getComputedStyle(document.body).getPropertyValue('--muted').trim() || '#a8b3c8');
+      label.textContent = d.k.split(' ')[0];
+      svg.appendChild(label);
+
+      setTimeout(()=> { rect.setAttribute('height', barH); rect.setAttribute('y', y); }, 150 + i*90);
     });
-  </script>
+    box.appendChild(svg);
+  })();
+
+  // tooltip
+  const tip = document.createElement('div');
+  tip.style.position='fixed'; tip.style.pointerEvents='none'; tip.style.padding='6px 8px';
+  tip.style.borderRadius='6px'; tip.style.background= 'var(--panel)'; tip.style.color='var(--text)';
+  tip.style.boxShadow='var(--card-shadow)'; tip.style.display='none'; tip.style.fontSize='13px'; tip.style.zIndex=9999;
+  document.body.appendChild(tip);
+  function showTooltip(e, text){ tip.textContent=text; tip.style.left=(e.clientX+12)+'px'; tip.style.top=(e.clientY+12)+'px'; tip.style.display='block'; }
+  function hideTooltip(){ tip.style.display='none' }
+
+  // Back to top visibility
+  const toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', ()=> {
+    if(window.scrollY > 360) toTop.style.opacity = 1; else toTop.style.opacity = 0;
+  });
+
+  // smooth scroll adjustment for anchor links (offset for sticky nav)
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      const href = a.getAttribute('href');
+      if(href.length>1){
+        e.preventDefault();
+        const el = document.querySelector(href);
+        if(el) window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 72, behavior:'smooth'});
+      }
+    });
+  });
+
+  // ensure Nebula color shifts slightly with theme
+  function syncNebulaToTheme(){
+    // nothing required — CSS uses variables; this placeholder could be used for dynamic adjustments
+  }
+  // init
+  syncNebulaToTheme();
+
+  // reveal hero slightly
+  window.addEventListener('load', ()=> { setTimeout(()=> document.querySelectorAll('.project-card').forEach(c=> c.classList.remove('visible')),200); });
+</script>
 </body>
 </html>
 
