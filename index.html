@@ -1,519 +1,652 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Ankush Patil — ML/NLP Engineer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ankush Patil — ML & NLP Engineer. LLM fine-tuning, RAG, Transformers, PyTorch. Portfolio.">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Ankush Patil — ML / NLP Engineer</title>
+<meta name="description" content="Ankush Patil — ML/NLP Engineer. LLM fine-tuning, RAG, Transformers, PyTorch. Portfolio and projects.">
+<!-- OpenGraph / SEO -->
+<meta property="og:title" content="Ankush Patil — ML / NLP Engineer">
+<meta property="og:description" content="LLM fine-tuning, RAG systems, Transformers, PyTorch. Portfolio and projects.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ankush-patil99.github.io/">
+<meta name="twitter:card" content="summary_large_image">
 
-  <style>
-    :root{
-      --bg: #fafafa;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #555;
-      --primary: #0066ff;
-      --accent: #e8f0fe;
-      --shadow: 0 8px 20px rgba(15,23,42,0.08);
-      --glass: rgba(255,255,255,0.6);
-    }
-    [data-theme="dark"]{
-      --bg: #0b1020;
-      --card: #0f1724;
-      --text: #e6eef8;
-      --muted: #a8b3c8;
-      --primary: #58a6ff;
-      --accent: rgba(24,58,102,0.12);
-      --shadow: 0 10px 30px rgba(2,6,23,0.6);
-      --glass: rgba(255,255,255,0.02);
-    }
-
-    html{scroll-behavior:smooth}
-    *{box-sizing:border-box}
-    body{
-      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      margin:0;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
-
-    /* page container */
-    .site {
-      max-width:980px;
-      margin:0 auto;
-      padding:28px;
-    }
-
-    /* navbar */
-    nav.top {
-      position:sticky;
-      top:0;
-      backdrop-filter: blur(6px);
-      background: linear-gradient(180deg, var(--bg), rgba(255,255,255,0));
-      z-index:60;
-      border-bottom: 1px solid rgba(0,0,0,0.04);
-    }
-    nav .inner {
-      display:flex;
-      align-items:center;
-      gap:18px;
-      justify-content:space-between;
-      max-width:980px;
-      margin:0 auto;
-      padding:12px 20px;
-    }
-    .brand { font-weight:700; font-size:18px; color:var(--text) }
-    .nav-links a { color:var(--primary); text-decoration:none; margin-right:14px; font-weight:600; }
-    .nav-right { display:flex; gap:10px; align-items:center }
-
-    .btn-toggle {
-      border:0; background:transparent; cursor:pointer; padding:6px 8px; border-radius:8px;
-      color:var(--muted); font-weight:600;
-    }
-
-    header { padding:24px 20px 8px 20px; }
-    h1 { margin:0; font-size:34px; letter-spacing:-0.2px; }
-    .subtitle { color:var(--muted); margin-top:8px; font-size:15px; }
-
-    /* skills */
-    .skills-row { margin-top:18px; display:flex; flex-wrap:wrap; gap:8px; }
-    .skill-badge { background:var(--accent); color:var(--primary); padding:8px 12px; border-radius:999px; font-weight:600; font-size:13px; }
-
-    /* layout */
-    .section { margin-top:28px; }
-    h2.section-title {
-      display:flex; align-items:center; gap:12px; font-size:20px; border-left:4px solid var(--primary); padding-left:12px;
-    }
-
-    /* about */
-    .about { background:var(--card); padding:18px; border-radius:10px; box-shadow:var(--shadow); }
-
-    /* projects */
-    .project-card {
-      display:flex; gap:16px; align-items:flex-start;
-      background:var(--card);
-      padding:16px;
-      border-radius:10px;
-      box-shadow:var(--shadow);
-      margin:18px 0;
-      transform:translateY(0);
-      transition:transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s;
-      opacity:0; will-change:transform,opacity;
-    }
-    .project-card.visible { opacity:1; transform: translateY(0); }
-    .project-card:hover { transform:translateY(-8px); box-shadow: 0 20px 40px rgba(2,6,23,0.12); }
-
-   .thumb {
-  min-width: 86px;
-  height: 68px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: var(--primary);
-  font-weight: 700;
-  background: var(--card);
-  border: 1px solid rgba(255,255,255,0.07);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+<!-- Structured data (Person) using your resume as source. -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Ankush Patil",
+  "jobTitle":"ML/NLP Engineer",
+  "url":"https://ankush-patil99.github.io",
+  "sameAs":[
+    "https://github.com/Ankush-Patil99",
+    "https://www.linkedin.com/in/ankush-patil-48989739a"
+  ]
 }
+</script>
 
-    [data-theme="dark"] .thumb { border:1px solid rgba(255,255,255,0.04) }
+<style>
+  /* ========== THEMES ========== */
+  :root{
+    --bg:#0b1020;
+    --panel:#0f1724;
+    --text:#e6eef8;
+    --muted:#a8b3c8;
+    --primary:#58a6ff;
+    --accent:rgba(88,166,255,0.08);
+    --glass: rgba(255,255,255,0.02);
+    --shadow: 0 10px 30px rgba(2,6,23,0.6);
+  }
+  :root[data-theme="light"]{
+    --bg:#f8fbff;
+    --panel:#ffffff;
+    --text:#0b1724;
+    --muted:#475569;
+    --primary:#0066ff;
+    --accent: rgba(0,102,255,0.06);
+    --glass: rgba(0,0,0,0.04);
+    --shadow: 0 8px 20px rgba(15,23,42,0.06);
+  }
 
-    .project-body { flex:1 }
-    .project-body h3 { margin:0; font-size:16px }
-    .project-body p { margin:8px 0 12px 0; color:var(--muted); line-height:1.45; font-size:14px }
-    .project-links a { color:var(--primary); text-decoration:none; font-weight:600; margin-right:12px; font-size:14px }
+  html{scroll-behavior:smooth}
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;
+    background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
 
-    /* contact */
-    .contact { display:flex; gap:14px; align-items:flex-start; padding:14px; border-radius:10px; background:var(--card); box-shadow:var(--shadow) }
-    .contact .left { min-width:120px; font-weight:700 }
-    .contact .right a { display:block; color:var(--primary); text-decoration:none; margin-bottom:6px }
+  /* Nebula background (parallax-ready) */
+  .bg-wrap { position:fixed; inset:0; z-index:-3; pointer-events:none; overflow:hidden; }
+  .nebula {
+    position:absolute; width:220%; height:220%; left:-60%; top:-50%;
+    background:
+      radial-gradient(circle at 25% 30%, rgba(88,166,255,0.16), transparent 12%),
+      radial-gradient(circle at 75% 70%, rgba(160,50,255,0.12), transparent 12%),
+      radial-gradient(circle at 60% 30%, rgba(255,100,140,0.06), transparent 8%);
+    filter: blur(70px);
+    opacity:0.95;
+    mix-blend-mode:screen;
+    transition: transform 0.8s ease-out;
+  }
+  .noise { position:fixed; inset:0; z-index:-2; opacity:0.03; background-image:radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px); background-size:3px 3px; mix-blend-mode:overlay; pointer-events:none; }
 
-    /* skill bars / graph */
-    .skill-bars { display:flex; gap:18px; margin-top:14px; flex-wrap:wrap }
-    .skill-bar { flex-basis: 48%; background:var(--card); padding:12px; border-radius:10px; box-shadow:var(--shadow) }
-    .skill-row { display:flex; align-items:center; justify-content:space-between; margin:10px 0; gap:10px }
-    .bar-track { background: rgba(0,0,0,0.06); height:10px; border-radius:999px; overflow:hidden; flex:1; margin-left:12px }
-    .bar-fill { height:10px; width:0%; background:linear-gradient(90deg,var(--primary),#33a1ff); border-radius:999px; transition:width 1s cubic-bezier(.2,.9,.3,1) }
+  /* progress bar */
+  #progressBar { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--primary), #33a1ff); width:0%; z-index:9999; transition:width .12s linear; }
 
-    /* svg graph */
-    .graph { background:var(--card); padding:12px; border-radius:10px; box-shadow:var(--shadow); }
-    .tooltip { position:fixed; pointer-events:none; background:var(--card); color:var(--text); border-radius:6px; padding:6px 8px; font-size:13px; box-shadow:var(--shadow); display:none }
+  /* layout container */
+  .site { max-width:980px; margin:0 auto; padding:22px; position:relative; z-index:10; }
 
-    /* footer */
-    footer { margin-top:26px; color:var(--muted); text-align:center; padding-bottom:26px }
+  /* nav */
+  nav.top { position:sticky; top:0; z-index:50; backdrop-filter: blur(6px); background: linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0)); border-bottom:1px solid rgba(255,255,255,0.02); }
+  :root[data-theme="light"] nav.top { background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.6)); border-bottom:1px solid rgba(0,0,0,0.04); }
+  .nav-inner { max-width:980px; margin:0 auto; padding:10px 18px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  .brand { font-weight:700; font-size:15px; color:var(--text) }
+  .nav-links a { color:var(--primary); text-decoration:none; margin-right:14px; font-weight:600 }
+  .cta-resume { background:linear-gradient(90deg,var(--primary), #33a1ff); color:#fff; padding:8px 12px; border-radius:8px; text-decoration:none; font-weight:700; box-shadow:0 8px 20px rgba(51,161,255,0.12); }
+  .theme-btn { background:transparent; border:0; color:var(--muted); cursor:pointer; font-size:16px; padding:6px 8px; border-radius:8px }
 
-    /* responsive */
-    @media (max-width:700px){
-      .skill-bar { flex-basis:100% }
-      .thumb{display:none}
-      .project-card{padding:12px}
-    }
+  /* hero / about */
+  .hero { padding:28px 6px 8px 6px; }
+  h1 { margin:0; font-size:34px; letter-spacing:-0.2px; }
+  .subtitle { color:var(--muted); margin-top:8px; font-size:15px; }
+  .about-card { background:var(--panel); border-radius:12px; padding:16px; box-shadow:var(--shadow); border:1px solid var(--glass); color:var(--muted); margin-top:14px; }
 
-    /* small icons style */
-    .icon { width:18px; height:18px; vertical-align:middle; display:inline-block }
-  </style>
+  /* featured project */
+  .featured { margin-top:18px; display:flex; gap:14px; align-items:flex-start; }
+  .feat-thumb { width:110px; height:70px; border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--primary); font-weight:800; background: linear-gradient(180deg, rgba(88,166,255,0.06), rgba(0,0,0,0.02)); border:1px solid var(--glass) }
+  .badge { display:inline-block; padding:4px 8px; background:linear-gradient(90deg,var(--primary),#33a1ff); color:white; border-radius:999px; font-weight:700; font-size:12px }
+
+  /* experience & timeline */
+  .experience { margin-top:22px; display:flex; gap:18px; align-items:flex-start; flex-wrap:wrap; }
+  .exp-left { width:160px; flex-shrink:0; color:var(--muted) }
+  .exp-right { flex:1 }
+  .timeline { margin-top:12px; padding-left:8px; border-left:2px solid rgba(255,255,255,0.04); }
+  .timeline-item { position:relative; padding:12px 0 12px 18px; }
+  .timeline-item::before { content:''; position:absolute; left:-11px; top:18px; width:8px; height:8px; border-radius:50%; background:var(--primary); border:2px solid var(--panel) }
+
+  /* batches & projects */
+  .section { margin-top:26px; }
+  h2.section-title { display:flex; align-items:center; gap:12px; font-size:20px; border-left:4px solid var(--primary); padding-left:12px; }
+  .batches { margin-top:14px; display:flex; flex-direction:column; gap:16px; }
+  .batch { display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+  @media (max-width:880px) { .batch { grid-template-columns: 1fr } }
+  .project-card { position:relative; display:flex; gap:12px; background:var(--panel); padding:14px; border-radius:10px; box-shadow:var(--shadow); border:1px solid var(--glass); transform:translateY(10px); opacity:0; transition:all .6s cubic-bezier(.2,.9,.3,1); }
+  .project-card.visible { transform:translateY(0); opacity:1 }
+  .project-cat { position:absolute; top:10px; right:10px; background:rgba(0,0,0,0.06); color:var(--muted); padding:4px 8px; border-radius:8px; font-size:12px; font-weight:700; border:1px solid var(--glass) }
+  .project-thumb { width:64px; height:48px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--primary); background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02)); flex-shrink:0 }
+  .project-body h3 { margin:0; font-size:15px }
+  .project-body p { margin:8px 0 10px 0; color:var(--muted); font-size:14px; line-height:1.45 }
+  .project-links a { color:var(--primary); font-weight:700; text-decoration:none; }
+
+  /* tooltip */
+  .tooltip { position:fixed; pointer-events:none; background:var(--panel); color:var(--text); border-radius:8px; padding:8px 10px; font-size:13px; box-shadow:var(--shadow); display:none; z-index:9999; border:1px solid var(--glass); max-width:300px; }
+
+  /* skills */
+  .skills-area { display:flex; gap:18px; margin-top:18px; align-items:flex-start; flex-wrap:wrap; }
+  .skill-box { flex:1; min-width:260px }
+  .bar-label { display:flex; justify-content:space-between; align-items:center; font-size:13px; color:var(--muted) }
+  .bar-track { width:100%; height:10px; background: rgba(255,255,255,0.03); border-radius:999px; overflow:hidden }
+  .bar-fill { height:10px; width:0%; background: linear-gradient(90deg,var(--primary),#33a1ff); border-radius:999px; transition: width 1s cubic-bezier(.2,.9,.3,1) }
+
+  .graph-box { width:340px; min-width:220px; background:var(--panel); padding:12px; border-radius:10px; box-shadow:var(--shadow); border:1px solid var(--glass) }
+
+  .mode-toggle { margin-top:10px; display:flex; gap:10px }
+
+  /* now learning badges */
+  .now-learning { margin-top:14px; display:flex; gap:10px; flex-wrap:wrap }
+  .nl-badge { background:linear-gradient(90deg,var(--primary), #33a1ff); color:white; padding:6px 10px; border-radius:999px; font-weight:700; cursor:default; font-size:13px }
+
+  /* contact */
+  .contact-card { background:var(--panel); padding:14px; border-radius:10px; box-shadow:var(--shadow); border:1px solid var(--glass); margin-top:18px }
+  .contact-grid { display:flex; gap:14px; flex-wrap:wrap }
+
+  /* CTA under contact */
+  .cta-contact { margin-top:12px; background:linear-gradient(90deg,var(--primary), #33a1ff); color:#fff; padding:10px 12px; border-radius:8px; display:inline-block; text-decoration:none; font-weight:700 }
+
+  /* floating email and back-to-top */
+  .floating-email { position:fixed; right:16px; bottom:86px; width:54px; height:54px; border-radius:12px; display:flex; align-items:center; justify-content:center; background:linear-gradient(90deg,var(--primary),#33a1ff); color:white; box-shadow:0 10px 30px rgba(51,161,255,0.16); z-index:60 }
+  .to-top { position:fixed; right:16px; bottom:16px; width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; background:var(--panel); color:var(--text); box-shadow:var(--shadow); z-index:60; cursor:pointer; opacity:0; transition:opacity .2s }
+
+  /* footer */
+  footer { margin-top:26px; color:var(--muted); text-align:center; padding-bottom:36px }
+
+  /* subtle section divider */
+  .divider { height:6px; margin:24px 0; border-radius:999px; background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); opacity:0.5 }
+
+  /* responsive tweaks */
+  @media (max-width:720px){
+    h1{font-size:24px}
+    .graph-box { width:100% }
+    .exp-left{display:none}
+    .project-thumb{display:none}
+    .featured{flex-direction:column;gap:10px}
+  }
+</style>
 </head>
 <body>
-  <nav class="top" aria-label="top navigation">
-    <div class="inner" style="max-width:980px; margin:0 auto;">
-      <div style="display:flex;gap:14px;align-items:center">
+  <!-- Nebula background -->
+  <div class="bg-wrap" aria-hidden>
+    <div class="nebula" id="nebula"></div>
+  </div>
+  <div class="noise" aria-hidden></div>
+
+  <!-- top progress bar -->
+  <div id="progressBar" role="progressbar" aria-hidden="true"></div>
+
+  <nav class="top" role="navigation" aria-label="Main Navigation">
+    <div class="nav-inner">
+      <div style="display:flex;align-items:center;gap:12px">
         <div class="brand">Ankush Patil — ML / NLP</div>
-        <div class="nav-links" style="margin-left:8px">
-          <a href="resume.pdf" target="_blank">Resume</a>
+        <div class="nav-links" aria-hidden>
           <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
           <a href="#contact">Contact</a>
         </div>
       </div>
-
-      <div class="nav-right">
-        <button class="btn-toggle" id="themeToggle" title="Toggle dark mode">🌙</button>
+      <div style="display:flex;gap:8px;align-items:center">
+        <a class="cta-resume" href="Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+        <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">☀️</button>
       </div>
     </div>
   </nav>
 
-  <main class="site">
-
-    <!-- header -->
-    <header>
+  <main class="site" id="siteRoot">
+    <!-- HERO -->
+    <section id="hero" class="hero" role="banner">
       <h1>Ankush Patil — ML / NLP Engineer</h1>
       <div class="subtitle">LLM Fine-tuning • RAG • Transformers • PyTorch • Hugging Face</div>
 
-      <!-- Skills badges -->
-      <div class="skills-row" style="margin-top:12px">
-        <span class="skill-badge">Python</span>
-        <span class="skill-badge">PyTorch</span>
-        <span class="skill-badge">Transformers</span>
-        <span class="skill-badge">Hugging Face</span>
-        <span class="skill-badge">RAG</span>
-        <span class="skill-badge">LLM Fine-Tuning</span>
-        <span class="skill-badge">Deep Learning</span>
-        <span class="skill-badge">Docker</span>
-        <span class="skill-badge">AWS</span>
-        <span class="skill-badge">SQL</span>
+      <div style="margin-top:12px; display:flex;gap:12px;align-items:center">
+        <a class="cta-resume" href="Resume.pdf" target="_blank" rel="noopener" style="padding:12px 16px">Download Resume</a>
+        <a href="#about" style="color:var(--muted); text-decoration:none; padding:8px 12px; border-radius:8px; border:1px solid var(--glass)">About</a>
       </div>
-    </header>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <h2 class="section-title">About</h2>
-      <div class="about" style="margin-top:12px">
-        <p style="margin:0; color:var(--muted); line-height:1.5">
-          I’m a Machine Learning and NLP engineer focused on building production-ready LLM systems,
-          retrieval-augmented pipelines, and efficient deep-learning models. I enjoy turning research
-          ideas into reliable code and clean demos. Currently targeting roles in NLP / LLM engineering
-          where I can build scalable, real-world systems.
-        </p>
+      <div class="about-card" id="about" aria-labelledby="about">
+        <!-- About text sourced from resume summary. -->
+        <p>I’m a Machine Learning and NLP engineer focused on building production-ready LLM systems, retrieval-augmented pipelines, and efficient deep-learning models. I enjoy turning research ideas into reliable code and clean demos. Currently targeting roles in NLP / LLM engineering where I can build scalable, real-world systems.</p>
       </div>
     </section>
 
-    <!-- skill bars + graph -->
-   <section class="section" id="skills">
-  <h2 class="section-title">Skills & Visual</h2>
+    <!-- FEATURED -->
+    <section id="featured" class="section" aria-label="Featured project">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <h2 class="section-title">Featured Project</h2>
+        <div style="font-size:13px;color:var(--muted)">Flagship work • sourced from résumé</div>
+      </div>
 
-  <div class="skill-bars" style="margin-top:12px">
-    <div class="skill-bar" id="skillBars">
-      
-      <div class="skill-row"><div>PyTorch</div><div><strong>90%</strong></div></div>
-      <div class="bar-track"><div class="bar-fill" data-val="90"></div></div>
-
-      <div class="skill-row"><div>Transformers</div><div><strong>95%</strong></div></div>
-      <div class="bar-track"><div class="bar-fill" data-val="95"></div></div>
-
-      <div class="skill-row"><div>Hugging Face</div><div><strong>90%</strong></div></div>
-      <div class="bar-track"><div class="bar-fill" data-val="90"></div></div>
-
-      <div class="skill-row"><div>RAG / Retrieval</div><div><strong>85%</strong></div></div>
-      <div class="bar-track"><div class="bar-fill" data-val="85"></div></div>
-
-      <div class="skill-row"><div>Computer Vision</div><div><strong>90%</strong></div></div>
-      <div class="bar-track"><div class="bar-fill" data-val="90"></div></div>
-
-      <div class="skill-row"><div>Classical ML</div><div><strong>95%</strong></div></div>
-      <div class="bar-track"><div class="bar-fill" data-val="95"></div></div>
-
-    </div>
-
-    <div class="graph" id="skillGraph" style="width:340px">
-      <!-- Inline SVG graph generated by JS -->
-    </div>
-  </div>
-</section>
-
-
-    <!-- projects -->
-    <section class="section" id="projects">
-      <h2 class="section-title">Projects</h2>
-
-      <!-- Project 1 -->
-      <article class="project-card">
-        <div class="thumb" aria-hidden>
-          <!-- SVG thumbnail -->
-          <svg width="68" height="48" viewBox="0 0 68 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="68" height="48" rx="6" fill="url(#g1)"/>
-            <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#e6f0ff"/><stop offset="1" stop-color="#d7eaff"/></linearGradient></defs>
-            <text x="10" y="30" fill="#0752b8" font-weight="700" font-size="14">LLM</text>
-          </svg>
+      <div class="featured" role="article" aria-labelledby="featured">
+        <div class="feat-thumb" aria-hidden>LLM</div>
+        <div class="meta">
+          <div style="display:flex;align-items:center;gap:12px">
+            <h3 style="margin:0">Wikipedia → LLaMA Fine-Tuning (RAG + LoRA)</h3>
+            <span class="badge">Featured</span>
+          </div>
+          <p style="margin:8px 0 0 0; color:var(--muted)">Built a complete RAG pipeline with optimized chunking, FAISS retrieval and LoRA fine-tuning of LLaMA for factual QA. <strong>ROUGE-1: 0.033 • ROUGE-L: 0.024</strong>. (See code & details in repo.)</p>
+          <div style="margin-top:10px"><a class="project-links" href="https://github.com/Ankush-Patil99/wikipedia-rag-llama-finetuning" target="_blank">GitHub Repo</a></div>
         </div>
-        <div class="project-body">
-          <h3>Wikipedia → LLaMA Fine-Tuning (RAG + LoRA)</h3>
-          <p>Complete RAG system with chunking, embeddings, FAISS retrieval + LoRA fine-tuning of LLaMA. <strong>ROUGE-1: 0.033 • ROUGE-L: 0.024</strong></p>
-          <div class="project-links">
-            <a href="https://github.com/Ankush-Patil99/wikipedia-rag-llama-finetuning" target="_blank">GitHub Repo</a>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden></div>
+
+    <!-- EXPERIENCE & TIMELINE -->
+    <section id="experience" class="section" aria-label="Experience">
+      <div style="display:flex;gap:18px;align-items:flex-start;">
+        <div class="exp-left" aria-hidden>
+          <div style="font-weight:700">Experience</div>
+          <div style="margin-top:10px;color:var(--muted)">Selected roles</div>
+        </div>
+        <div class="exp-right">
+          <!-- Timeline items generated from resume content. Citation: Resume.pdf. -->
+          <div class="timeline" role="list">
+            <div class="timeline-item" role="listitem">
+              <div style="font-weight:700">Site Engineer — Charwak Engineers & Developers</div>
+              <div style="color:var(--muted); font-size:13px; margin-top:4px">Feb 2023 – Nov 2025 (Onsite)</div>
+              <ul style="color:var(--muted); margin-top:8px">
+                <li>Supervised onsite construction activities, ensuring adherence to drawings, specs and safety standards.</li>
+                <li>Developed documentation workflows, technical reporting, and process improvements transferable to ML system design.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item" role="listitem">
+              <div style="font-weight:700">Independent ML / NLP Projects</div>
+              <div style="color:var(--muted); font-size:13px; margin-top:4px">2024 – 2025</div>
+              <ul style="color:var(--muted); margin-top:8px">
+                <li>Built end-to-end projects: RAG + fine-tuned LLaMA, Transformer from-scratch, large-scale Amazon reviews pipeline, CV models.</li>
+                <li>Implemented reproducible pipelines, evaluation metrics and model deployment scripts (HuggingFace & GitHub).</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item" role="listitem">
+              <div style="font-weight:700">Education</div>
+              <div style="color:var(--muted); font-size:13px; margin-top:4px">B.E. Civil Engineering — K.K. Wagh I.E.E.R., Nashik (2021)</div>
+            </div>
           </div>
         </div>
-      </article>
-
-      <!-- Project 2 -->
-      <article class="project-card">
-        <div class="thumb">
-          <svg width="68" height="48"><rect width="68" height="48" rx="6" fill="#fff0e6"/><text x="6" y="30" font-weight="700" fill="#b65a00">TR</text></svg>
-        </div>
-        <div class="project-body">
-          <h3>Transformer Hindi ↔ English Translation (From Scratch)</h3>
-          <p>Custom Transformer encoder-decoder (attention, masking, beam search). <strong>BLEU 49.76</strong> on Hindi→English; deployed on Hugging Face.</p>
-          <div class="project-links"><a href="https://github.com/Ankush-Patil99/transformer-seq2seq-from-scratch" target="_blank">GitHub Repo</a></div>
-        </div>
-      </article>
-
-      <!-- Project 3 -->
-      <article class="project-card">
-        <div class="thumb"><svg width="68" height="48"><rect width="68" height="48" rx="6" fill="#f0fff6"/><text x="8" y="30" font-weight="700" fill="#0b7a3f">AR</text></svg></div>
-        <div class="project-body">
-          <h3>Amazon Reviews NLP Analysis (3M+ Reviews)</h3>
-          <p>Sentiment analysis, aspect mining, topic modeling, and BART/T5 summarization at scale.</p>
-          <div class="project-links"><a href="https://github.com/Ankush-Patil99/amazon-reviews-nlp-analysis" target="_blank">GitHub Repo</a></div>
-        </div>
-      </article>
-
-      <!-- Project 4 -->
-      <article class="project-card">
-        <div class="thumb"><svg width="68" height="48"><rect width="68" height="48" rx="6" fill="#f6f7ff"/><text x="8" y="30" font-weight="700" fill="#2333a6">SP</text></svg></div>
-        <div class="project-body">
-          <h3>SMS Spam Classification — Naive Bayes, GDA, Logistic Regression</h3>
-          <p>TF-IDF + classical ML pipeline identifying spam patterns with strong recall.</p>
-          <div class="project-links"><a href="https://github.com/Ankush-Patil99/spam-classification-bayes-gda-logreg" target="_blank">GitHub Repo</a></div>
-        </div>
-      </article>
-
-      <!-- Project 5 -->
-      <article class="project-card">
-        <div class="thumb"><svg width="68" height="48"><rect width="68" height="48" rx="6" fill="#fff7f0"/><text x="6" y="30" font-weight="700" fill="#b02e00">CV</text></svg></div>
-        <div class="project-body">
-          <h3>Plant Disease Detection — ResNet18</h3>
-          <p>ResNet18 with augmentation + OneCycleLR. <strong>38 disease classes</strong> with Grad-CAM explanations.</p>
-          <div class="project-links"><a href="https://github.com/Ankush-Patil99/plant-disease-detection-resnet18" target="_blank">GitHub Repo</a></div>
-        </div>
-      </article>
-
-      <!-- Project 6 -->
-      <article class="project-card">
-        <div class="thumb"><svg width="68" height="48"><rect width="68" height="48" rx="6" fill="#eef6ff"/><text x="10" y="30" font-weight="700" fill="#0b57a6">HS</text></svg></div>
-        <div class="project-body">
-          <h3>Heart Stroke Prediction System</h3>
-          <p>End-to-end ML pipeline with feature engineering and imbalance handling for stroke risk prediction.</p>
-          <div class="project-links"><a href="https://github.com/Ankush-Patil99/Heart-Stroke-Prediction-ML" target="_blank">GitHub Repo</a></div>
-        </div>
-      </article>
-
-      <!-- Project 7 -->
-      <article class="project-card">
-        <div class="thumb"><svg width="68" height="48"><rect width="68" height="48" rx="6" fill="#fff9f0"/><text x="8" y="30" font-weight="700" fill="#b86a00">FR</text></svg></div>
-        <div class="project-body">
-          <h3>Credit Card Fraud Detection — Anomaly Models</h3>
-          <p>UMAP, PCA, KMeans, GMM, DBSCAN, LOF, Isolation Forest. <strong>Best model: Isolation Forest</strong>.</p>
-          <div class="project-links"><a href="https://github.com/Ankush-Patil99/credit-card-fraud-detection-anomaly-models" target="_blank">GitHub Repo</a></div>
-        </div>
-      </article>
-
-      <!-- Project 8 -->
-      <article class="project-card">
-        <div class="thumb"><svg width="68" height="48"><rect width="68" height="48" rx="6" fill="#f6fff9"/><text x="6" y="30" font-weight="700" fill="#0b7a3f">ST</text></svg></div>
-        <div class="project-body">
-          <h3>Student Performance & Ranking System</h3>
-          <p>Regression-based model using PCA, SVM, Gradient Boosting and stacking. <strong>R² = 0.90</strong>.</p>
-          <div class="project-links"><a href="https://github.com/Ankush-Patil99/student-performance-ml-project" target="_blank">GitHub Repo</a></div>
-        </div>
-      </article>
-
+      </div>
     </section>
 
-    <!-- contact -->
-    <section class="section" id="contact" style="margin-top:18px">
-      <h2 class="section-title">Contact</h2>
-      <div class="contact" style="margin-top:12px">
-        <div class="left">Ankush Patil</div>
-        <div class="right">
-          <div style="color:var(--muted); margin-bottom:6px">Machine Learning & NLP Engineer</div>
-          <a href="mailto:ankpatil1203@gmail.com">
-            <!-- email icon -->
-            <svg class="icon" viewBox="0 0 24 24" fill="none" style="vertical-align:middle; margin-right:8px"><path d="M3 6.5v11A2.5 2.5 0 0 0 5.5 20h13A2.5 2.5 0 0 0 21 17.5v-11A2.5 2.5 0 0 0 18.5 4h-13A2.5 2.5 0 0 0 3 6.5z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            ankpatil1203@gmail.com
-          </a>
-          <a href="https://www.linkedin.com/in/ankush-patil-48989739a" target="_blank">
-            <!-- linkedin icon -->
-            <svg class="icon" viewBox="0 0 24 24" fill="none" style="vertical-align:middle; margin-right:8px"><path d="M4 4.5h16v15H4z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            linkedin.com/in/ankush-patil-48989739a
-          </a>
-          <a href="https://github.com/Ankush-Patil99" target="_blank">
-            <!-- github icon -->
-            <svg class="icon" viewBox="0 0 24 24" fill="none" style="vertical-align:middle; margin-right:8px"><path d="M12 2C7 2 4 5 4 9c0 3 2 5 4 6v2c0 .5-.5.5-1 1 0 0 1 0 2-1 2 1 4 1 6 0 1 1 2 1 2 1-.5-.5-.5-.5-.5-.5V15c2-1 4-3 4-6 0-4-3-7-8-7z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            github.com/Ankush-Patil99
-          </a>
+    <div class="divider" aria-hidden></div>
+
+    <!-- PROJECTS (batches of 4) -->
+    <section id="projects" class="section" aria-label="Projects">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="batches" id="batches">
+        <!-- Batch 1 (projects 1-4) -->
+        <div class="batch" data-batch="1">
+          <!-- Project 1 -->
+          <article class="project-card" data-tooltip='{"cat":"LLM","tech":"PyTorch, LLaMA, LoRA, RAG, FAISS","year":"Sep–Oct 2025","size":"Wikipedia corpus","impact":"+12% QA coherence"}'>
+            <div class="project-cat">LLM</div>
+            <div class="project-thumb">LLM</div>
+            <div class="project-body">
+              <h3>Wikipedia → LLaMA Fine-Tuning (RAG + LoRA)</h3>
+              <p>Built a complete RAG pipeline with chunking, embeddings, FAISS retrieval and LoRA fine-tuning of LLaMA. <strong>ROUGE-1: 0.033 • ROUGE-L: 0.024</strong>.</p>
+              <div class="project-links"><a href="https://github.com/Ankush-Patil99/wikipedia-rag-llama-finetuning" target="_blank">GitHub Repo</a></div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card" data-tooltip='{"cat":"NLP","tech":"PyTorch, Custom Attention, Beam Search","year":"Aug–Sep 2025","size":"Custom parallel corpora","impact":"BLEU 49.76"}'>
+            <div class="project-cat">NLP</div>
+            <div class="project-thumb">TR</div>
+            <div class="project-body">
+              <h3>Transformer — English ↔ Hindi (From Scratch)</h3>
+              <p>Implemented a full Transformer encoder–decoder with custom attention, masking and beam search. <strong>BLEU 49.76</strong>.</p>
+              <div class="project-links"><a href="https://github.com/Ankush-Patil99/transformer-seq2seq-from-scratch" target="_blank">GitHub Repo</a></div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card" data-tooltip='{"cat":"NLP","tech":"BART, TF-IDF, Topic Modeling","year":"Jul–Aug 2025","size":"3M+ reviews","impact":"Scalable summarization pipeline"}'>
+            <div class="project-cat">NLP</div>
+            <div class="project-thumb">AR</div>
+            <div class="project-body">
+              <h3>Amazon Reviews NLP Analysis (3M+ Reviews)</h3>
+              <p>Scalable pipeline including sentiment, aspect-mining and BART/T5 summarization for millions of reviews.</p>
+              <div class="project-links"><a href="https://github.com/Ankush-Patil99/amazon-reviews-nlp-analysis" target="_blank">GitHub Repo</a></div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card" data-tooltip='{"cat":"NLP","tech":"TF-IDF, Logistic Regression, Naive Bayes","year":"Feb–Mar 2025","size":"SMS dataset","impact":"High recall"}'>
+            <div class="project-cat">NLP</div>
+            <div class="project-thumb">SP</div>
+            <div class="project-body">
+              <h3>SMS Spam Classification — Naive Bayes, GDA, Logistic Regression</h3>
+              <p>TF-IDF + classical models identifying high-impact spam tokens with strong recall on noisy text.</p>
+              <div class="project-links"><a href="https://github.com/Ankush-Patil99/spam-classification-bayes-gda-logreg" target="_blank">GitHub Repo</a></div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Batch 2 (projects 5-8) -->
+        <div class="batch" data-batch="2">
+          <!-- Project 5 -->
+          <article class="project-card" data-tooltip='{"cat":"CV","tech":"PyTorch, ResNet18, Grad-CAM","year":"Apr–Jun 2025","size":"38 classes","impact":"High accuracy"}'>
+            <div class="project-cat">CV</div>
+            <div class="project-thumb">CV</div>
+            <div class="project-body">
+              <h3>Plant Disease Detection — ResNet18</h3>
+              <p>ResNet18 transfer-learning pipeline with Grad-CAM explainability; high accuracy across 38 classes.</p>
+              <div class="project-links"><a href="https://github.com/Ankush-Patil99/plant-disease-detection-resnet18" target="_blank">GitHub Repo</a></div>
+            </div>
+          </article>
+
+          <!-- Project 6 -->
+          <article class="project-card" data-tooltip='{"cat":"ML","tech":"Feature Engineering, Imbalance handling","year":"2025","size":"Health dataset","impact":"Stroke risk prediction"}'>
+            <div class="project-cat">ML</div>
+            <div class="project-thumb">HS</div>
+            <div class="project-body">
+              <h3>Heart Stroke Prediction System</h3>
+              <p>End-to-end ML pipeline for stroke risk prediction with feature engineering and imbalance handling.</p>
+              <div class="project-links"><a href="https://github.com/Ankush-Patil99/Heart-Stroke-Prediction-ML" target="_blank">GitHub Repo</a></div>
+            </div>
+          </article>
+
+          <!-- Project 7 -->
+          <article class="project-card" data-tooltip='{"cat":"ML","tech":"PCA, UMAP, Isolation Forest","year":"Feb–Mar 2025","size":"Card transactions","impact":"Isolation Forest best PR"}'>
+            <div class="project-cat">ML</div>
+            <div class="project-thumb">FR</div>
+            <div class="project-body">
+              <h3>Credit Card Fraud Detection — Anomaly Models</h3>
+              <p>Hybrid anomaly-detection workflow (PCA, UMAP, Isolation Forest). Isolation Forest delivered best precision-recall.</p>
+              <div class="project-links"><a href="https://github.com/Ankush-Patil99/credit-card-fraud-detection-anomaly-models" target="_blank">GitHub Repo</a></div>
+            </div>
+          </article>
+
+          <!-- Project 8 -->
+          <article class="project-card" data-tooltip='{"cat":"ML","tech":"PCA,SVM,GradientBoosting,Stacking","year":"Jan–Feb 2025","size":"Student dataset","impact":"R² = 0.90"}'>
+            <div class="project-cat">ML</div>
+            <div class="project-thumb">ST</div>
+            <div class="project-body">
+              <h3>Student Performance & Ranking System</h3>
+              <p>Stacked regression (PCA, SVM, Gradient Boosting). <strong>R² = 0.90</strong>.</p>
+              <div class="project-links"><a href="https://github.com/Ankush-Patil99/student-performance-ml-project" target="_blank">GitHub Repo</a></div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <footer>© 2025 Ankush Patil — Portfolio Website</footer>
+    <div class="divider" aria-hidden></div>
+
+    <!-- SKILLS with dual mode -->
+    <section id="skills" class="section" aria-label="Skills">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <h2 class="section-title">Skills & Visual</h2>
+        <div class="mode-toggle" aria-hidden>
+          <button id="modeBasic" class="theme-btn" aria-pressed="true">Basic</button>
+          <button id="modeAdvanced" class="theme-btn" aria-pressed="false">Advanced</button>
+        </div>
+      </div>
+
+      <div class="skills-area">
+        <div class="skill-box" id="basicView">
+          <div style="margin-top:10px">
+            <div class="bar-label"><div>PyTorch</div><div><strong>90%</strong></div></div>
+            <div class="bar-track"><div class="bar-fill" data-val="90"></div></div>
+
+            <div class="bar-label"><div>Transformers</div><div><strong>95%</strong></div></div>
+            <div class="bar-track"><div class="bar-fill" data-val="95"></div></div>
+
+            <div class="bar-label"><div>Hugging Face</div><div><strong>90%</strong></div></div>
+            <div class="bar-track"><div class="bar-fill" data-val="90"></div></div>
+
+            <div class="bar-label"><div>RAG / Retrieval</div><div><strong>85%</strong></div></div>
+            <div class="bar-track"><div class="bar-fill" data-val="85"></div></div>
+
+            <div class="bar-label"><div>Computer Vision</div><div><strong>90%</strong></div></div>
+            <div class="bar-track"><div class="bar-fill" data-val="90"></div></div>
+
+            <div class="bar-label"><div>Classical ML</div><div><strong>95%</strong></div></div>
+            <div class="bar-track"><div class="bar-fill" data-val="95"></div></div>
+          </div>
+        </div>
+
+        <div class="graph-box" id="advancedView" aria-hidden>
+          <!-- SVG graph will be rendered here -->
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden></div>
+
+    <!-- NOW LEARNING -->
+    <section id="nowlearning" class="section" aria-label="Now learning">
+      <h2 class="section-title">Now Learning</h2>
+      <div style="margin-top:12px; color:var(--muted)">Current focus — staying current with industry trends.</div>
+      <div class="now-learning" style="margin-top:12px">
+        <div class="nl-badge" data-tip="Agentic AI: multi-step agents that plan & execute">Agentic AI Systems</div>
+        <div class="nl-badge" data-tip="Multimodal LLMs: image+text models & fusion">Multimodal LLMs</div>
+        <div class="nl-badge" data-tip="Autonomous Pipelines: end-to-end agentic workflows">Autonomous AI Pipelines</div>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden></div>
+
+    <!-- CONTACT & CTA -->
+    <section id="contact" class="section" aria-label="Contact">
+      <h2 class="section-title">Contact</h2>
+
+      <div class="contact-card" style="margin-top:12px">
+        <div style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
+          <div style="min-width:140px"><strong>Ankush Patil</strong><div style="color:var(--muted); margin-top:6px">Machine Learning & NLP Engineer</div></div>
+          <div style="flex:1">
+            <div class="contact-grid">
+              <a href="mailto:ankpatil1203@gmail.com">📧 ankpatil1203@gmail.com</a>
+              <a href="https://www.linkedin.com/in/ankush-patil-48989739a" target="_blank">🔗 linkedin.com/in/ankush-patil-48989739a</a>
+              <a href="https://github.com/Ankush-Patil99" target="_blank">🐙 github.com/Ankush-Patil99</a>
+            </div>
+
+            <div style="margin-top:12px">
+              <a class="cta-contact" href="mailto:ankpatil1203@gmail.com">I’m open to full-time ML/NLP roles — reach out for interviews or collaborations</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2025 Ankush Patil — Portfolio</footer>
   </main>
 
-  <div class="tooltip" id="tooltip"></div>
+  <!-- floating email -->
+  <a class="floating-email" href="mailto:ankpatil1203@gmail.com" aria-label="Email Ankush">✉️</a>
 
-  <a class="back-to-top" href="#" title="Back to top" style="display:none; text-decoration:none; align-items:center; justify-content:center;">↑</a>
+  <!-- back to top -->
+  <div tabindex="0" class="to-top" id="toTop" role="button" aria-label="Back to top">↑</div>
 
-  <script>
-    /* -------- theme toggle (persist) -------- */
-    const themeBtn = document.getElementById('themeToggle');
-    const root = document.documentElement;
-    const applied = localStorage.getItem('site-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    if(applied === 'dark') root.setAttribute('data-theme','dark');
-    themeBtn.textContent = applied === 'dark' ? '☀️' : '🌙';
-    themeBtn.addEventListener('click', ()=> {
-      const now = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', now === 'dark' ? 'dark' : '');
-      themeBtn.textContent = now === 'dark' ? '☀️' : '🌙';
-      localStorage.setItem('site-theme', now);
-    });
+  <!-- tooltip -->
+  <div class="tooltip" id="tooltip" role="tooltip" aria-hidden="true"></div>
 
-    /* -------- fade-in & reveal for sections & cards -------- */
-    const obs = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          e.target.classList.add('visible');
-        }
-      });
-    }, {threshold:0.12});
+<script>
+  // ===== Theme toggle and persist =====
+  const root = document.documentElement;
+  const stored = localStorage.getItem('site-theme');
+  if(stored) root.setAttribute('data-theme', stored);
+  else {
+    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    if(prefersLight) root.setAttribute('data-theme','light');
+  }
+  const themeBtn = document.getElementById('themeToggle');
+  function updateThemeBtn(){ themeBtn.textContent = root.getAttribute('data-theme') === 'light' ? '🌙' : '☀️'; }
+  updateThemeBtn();
+  themeBtn.addEventListener('click', ()=>{
+    const cur = root.getAttribute('data-theme') === 'light' ? null : 'light';
+    if(cur) root.setAttribute('data-theme','light'); else root.removeAttribute('data-theme');
+    localStorage.setItem('site-theme', cur ? 'light' : 'dark');
+    updateThemeBtn();
+  });
 
-    document.querySelectorAll('.project-card').forEach(c=>{
-      c.style.transform = 'translateY(10px)';
-      obs.observe(c);
-    });
+  // ===== Nebula parallax subtle move on scroll =====
+  const nebula = document.getElementById('nebula');
+  window.addEventListener('scroll', ()=> {
+    const y = window.scrollY;
+    nebula.style.transform = `translateY(${y*0.03}px) translateX(${y*0.01}px)`;
+  });
 
-    document.querySelectorAll('.section').forEach(s=> obs.observe(s));
+  // ===== Progress bar =====
+  const progress = document.getElementById('progressBar');
+  window.addEventListener('scroll', ()=> {
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docH > 0 ? (window.scrollY / docH)*100 : 0;
+    progress.style.width = pct + '%';
+  });
 
-    /* -------- animate skill bars when visible -------- */
-    const bars = document.querySelectorAll('.bar-fill');
-    const barObserver = new IntersectionObserver((entries)=>{
-      entries.forEach(ent=>{
-        if(ent.isIntersecting){
-          const el = ent.target;
-          const val = el.getAttribute('data-val');
-          el.style.width = val + '%';
-        }
-      });
-    }, {threshold:0.3});
-    bars.forEach(b=> barObserver.observe(b));
-
-    /* -------- back to top button -------- */
-    const topBtn = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', ()=>{
-      if(window.scrollY > 300) topBtn.style.display = 'flex';
-      else topBtn.style.display = 'none';
-    });
-    topBtn.addEventListener('click',(e)=>{ e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); });
-
-    /* -------- simple interactive SVG bar graph for skills -------- */
-    (function renderGraph(){
-      const data = [
-        {k:'PyTorch', v:90},
-        {k:'Transformers', v:88},
-        {k:'Hugging Face', v:85},
-        {k:'RAG', v:82},
-        {k:'CV', v:78},
-        {k:'Classical ML', v:80},
-      ];
-      const svgNS = 'http://www.w3.org/2000/svg';
-      const wrapper = document.getElementById('skillGraph');
-      const w = 320, h = 220, pad = 18;
-      const svg = document.createElementNS(svgNS,'svg');
-      svg.setAttribute('width', w);
-      svg.setAttribute('height', h);
-      svg.style.display='block';
-      const max = 100;
-      const bw = (w - pad*2) / data.length;
-      data.forEach((d,i)=>{
-        const x = pad + i * bw + 6;
-        const barH = (d.v / max) * (h - pad*3);
-        const y = h - pad - barH;
-        // bar
-        const rect = document.createElementNS(svgNS,'rect');
-        rect.setAttribute('x', x);
-        rect.setAttribute('y', y);
-        rect.setAttribute('width', Math.max(18, bw - 18));
-        rect.setAttribute('height', 0);
-        rect.setAttribute('rx', 4);
-        rect.setAttribute('fill', 'url(#grad'+i+')');
-        rect.style.transition = 'height 800ms ease, y 800ms ease';
-        rect.addEventListener('mouseenter', (ev)=> showTip(ev, d.k+': '+d.v+'%'));
-        rect.addEventListener('mouseleave', hideTip);
-        svg.appendChild(rect);
-        // animate after append
-        setTimeout(()=>{ rect.setAttribute('height', barH); rect.setAttribute('y', y); }, 150 + i*80);
-
-        // label
-        const txt = document.createElementNS(svgNS,'text');
-        txt.setAttribute('x', x + 6);
-        txt.setAttribute('y', h - pad + 14);
-        txt.setAttribute('font-size', 11);
-        txt.setAttribute('fill', 'var(--muted)');
-        txt.textContent = d.k.split(' ')[0];
-        svg.appendChild(txt);
-
-        // gradient
-        const defs = document.createElementNS(svgNS,'defs');
-        const grad = document.createElementNS(svgNS,'linearGradient');
-        grad.setAttribute('id','grad'+i);
-        grad.setAttribute('x1','0'); grad.setAttribute('x2','0'); grad.setAttribute('y1','0'); grad.setAttribute('y2','1');
-        const stop1 = document.createElementNS(svgNS,'stop'); stop1.setAttribute('offset','0%'); stop1.setAttribute('stop-color','#58a6ff');
-        const stop2 = document.createElementNS(svgNS,'stop'); stop2.setAttribute('offset','100%'); stop2.setAttribute('stop-color','#33a1ff');
-        grad.appendChild(stop1); grad.appendChild(stop2);
-        defs.appendChild(grad);
-        svg.appendChild(defs);
-      });
-      wrapper.appendChild(svg);
-    })();
-
-    /* tooltip for graph */
-    const tip = document.getElementById('tooltip');
-    function showTip(e, text){
-      tip.style.display='block';
-      tip.textContent = text;
-      const x = e.clientX + 12;
-      const y = e.clientY + 12;
-      tip.style.left = x + 'px';
-      tip.style.top = y + 'px';
-    }
-    function hideTip(){ tip.style.display='none'; }
-
-    // move tooltip with mouse
-    document.addEventListener('mousemove', function(e){
-      if(tip.style.display === 'block'){
-        tip.style.left = (e.clientX + 12) + 'px';
-        tip.style.top = (e.clientY + 12) + 'px';
+  // ===== Batches reveal (4 per batch) =====
+  const batches = document.querySelectorAll('.batch');
+  const batchObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const cards = entry.target.querySelectorAll('.project-card');
+        cards.forEach((c,i)=> setTimeout(()=> c.classList.add('visible'), i*90));
       }
     });
+  }, {threshold:0.18});
+  batches.forEach(b=> batchObserver.observe(b));
 
-    // On load: mark project-cards visible in view
-    window.addEventListener('load', ()=>{
-      document.querySelectorAll('.project-card').forEach((c,i)=>{
-        setTimeout(()=> { if(c.getBoundingClientRect().top < window.innerHeight) c.classList.add('visible'); }, 80 + i*60);
-      });
+  // ===== Tooltip for projects using data-tooltip attr (JSON) =====
+  const tooltip = document.getElementById('tooltip');
+  function showTooltip(text, x, y){
+    tooltip.innerText = text;
+    tooltip.style.left = (x+14) + 'px';
+    tooltip.style.top = (y+14) + 'px';
+    tooltip.style.display = 'block';
+    tooltip.setAttribute('aria-hidden','false');
+  }
+  function hideTooltip(){
+    tooltip.style.display = 'none';
+    tooltip.setAttribute('aria-hidden','true');
+  }
+  document.querySelectorAll('.project-card').forEach(card=>{
+    card.addEventListener('mouseenter', (e)=>{
+      const data = card.getAttribute('data-tooltip');
+      if(!data) return;
+      try{
+        const obj = JSON.parse(data);
+        const text = `${obj.cat} · ${obj.tech} · ${obj.year} · ${obj.size} · ${obj.impact}`;
+        showTooltip(text, e.clientX, e.clientY);
+      }catch(err){}
     });
-  </script>
+    card.addEventListener('mousemove', (e)=> {
+      if(tooltip.style.display==='block'){
+        tooltip.style.left = (e.clientX + 14) + 'px';
+        tooltip.style.top = (e.clientY + 14) + 'px';
+      }
+    });
+    card.addEventListener('mouseleave', hideTooltip);
+  });
+
+  // ===== Skill bars animate when visible =====
+  document.querySelectorAll('.bar-fill').forEach(bar=>{
+    const val = bar.getAttribute('data-val');
+    const obs = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){ bar.style.width = val + '%'; obs.disconnect(); }
+      });
+    }, {threshold:0.3});
+    obs.observe(bar);
+  });
+
+  // ===== Advanced graph render =====
+  function renderGraph(){
+    const data = [
+      {k:'PyTorch', v:90},{k:'Transformers', v:95},{k:'Hugging Face', v:90},
+      {k:'RAG', v:85},{k:'CV', v:90},{k:'Classical ML', v:95}
+    ];
+    const box = document.getElementById('advancedView');
+    box.innerHTML = '';
+    const w = box.clientWidth || 320, h=220, pad=18;
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(svgNS,'svg');
+    svg.setAttribute('width','100%'); svg.setAttribute('height', h);
+    svg.style.display='block';
+    const max = 100;
+    const bw = (w - pad*2) / data.length;
+    data.forEach((d,i)=>{
+      const x = pad + i * bw + 6;
+      const barW = Math.max(18, bw - 20);
+      const barH = (d.v / max) * (h - pad*2);
+      const y = h - pad - barH;
+      const rect = document.createElementNS(svgNS,'rect');
+      rect.setAttribute('x', x); rect.setAttribute('y', h - pad); rect.setAttribute('width', barW); rect.setAttribute('height',0);
+      rect.setAttribute('rx',6); rect.setAttribute('fill','rgba(88,166,255,0.95)');
+      rect.style.transition = 'height 700ms ease, y 700ms ease';
+      rect.addEventListener('mouseenter', (ev)=> showTooltip(`${d.k}: ${d.v}%`, ev.clientX, ev.clientY));
+      rect.addEventListener('mouseleave', hideTooltip);
+      svg.appendChild(rect);
+      const label = document.createElementNS(svgNS,'text');
+      label.setAttribute('x', x + 6); label.setAttribute('y', h - 6); label.setAttribute('font-size',11);
+      label.setAttribute('fill', getComputedStyle(document.body).getPropertyValue('--muted').trim() || '#a8b3c8');
+      label.textContent = d.k.split(' ')[0];
+      svg.appendChild(label);
+      setTimeout(()=> { rect.setAttribute('height', barH); rect.setAttribute('y', y); }, 120 + i*80);
+    });
+    box.appendChild(svg);
+  }
+  renderGraph();
+
+  // ===== Mode toggle for skills =====
+  const basicView = document.getElementById('basicView');
+  const advView = document.getElementById('advancedView');
+  document.getElementById('modeBasic').addEventListener('click', ()=>{
+    basicView.style.display='block'; advView.setAttribute('aria-hidden','true'); advView.style.display='none';
+    document.getElementById('modeBasic').setAttribute('aria-pressed','true');
+    document.getElementById('modeAdvanced').setAttribute('aria-pressed','false');
+  });
+  document.getElementById('modeAdvanced').addEventListener('click', ()=>{
+    basicView.style.display='none'; advView.setAttribute('aria-hidden','false'); advView.style.display='block';
+    renderGraph();
+    document.getElementById('modeBasic').setAttribute('aria-pressed','false');
+    document.getElementById('modeAdvanced').setAttribute('aria-pressed','true');
+  });
+  // initial
+  basicView.style.display='block'; advView.style.display='none';
+
+  // ===== Back to top =====
+  const toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', ()=> { if(window.scrollY > 360) toTop.style.opacity = 1; else toTop.style.opacity = 0; });
+  toTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+  // ===== Floating email keyboard accessibility =====
+  const floatingEmail = document.querySelector('.floating-email');
+  floatingEmail.addEventListener('keydown', (e)=> { if(e.key==='Enter') window.location.href='mailto:ankpatil1203@gmail.com'; });
+
+  // ===== Anchor offset for sticky nav (smooth scroll handled by code below) =====
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      const href = a.getAttribute('href');
+      if(href.length>1){
+        e.preventDefault();
+        const el = document.querySelector(href);
+        if(el) window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 72, behavior:'smooth'});
+      }
+    });
+  });
+
+  // ===== Accessibility: keyboard focus outlines =====
+  document.addEventListener('keyup', (e)=> { if(e.key === 'Tab') document.body.classList.add('show-focus'); });
+
+  // ===== Init: reveal topmost batch if visible =====
+  window.addEventListener('load', ()=> {
+    batches.forEach((b,i)=> {
+      const cards = b.querySelectorAll('.project-card');
+      cards.forEach((c, idx) => { setTimeout(()=> c.classList.add('visible'), idx*80 + i*200); });
+    });
+  });
+
+  // ===== Tooltips for Now-Learning badges =====
+  document.querySelectorAll('.nl-badge').forEach(b=>{
+    b.addEventListener('mouseenter',(e)=> showTooltip(b.getAttribute('data-tip'), e.clientX, e.clientY));
+    b.addEventListener('mouseleave', hideTooltip);
+  });
+
+  // Small resize hook to re-render graph
+  window.addEventListener('resize', ()=> { if(document.getElementById('modeAdvanced').getAttribute('aria-pressed') === 'true') renderGraph(); });
+
+</script>
 </body>
 </html>
-
-
