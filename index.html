@@ -738,100 +738,53 @@ h1.hero-name .highlight {
 .proj-link::after { content: '→'; }
 
 /* ========== SKILLS (reorganized) ========== */
+/* ========== SKILLS (Minimal High Impact) ========== */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
 }
 
 .skill-category {
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 20px;
-  transition: var(--transition);
-  opacity: 0;
-  transform: translateY(16px);
-}
-
-.skill-category.visible {
-  opacity: 1;
-  transform: translateY(0);
+  padding: 24px;
+  transition: 0.3s ease;
 }
 
 .skill-category:hover {
   border-color: var(--border-hover);
-  box-shadow: var(--shadow-sm);
-}
-
-.skill-cat-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 14px;
-}
-
-.skill-cat-icon {
-  width: 32px; height: 32px;
-  border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 15px;
-  flex-shrink: 0;
+  box-shadow: var(--shadow-md);
 }
 
 .skill-cat-title {
   font-family: var(--font-display);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: 0.2px;
+  margin-bottom: 16px;
 }
 
 .skill-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 10px;
 }
 
 .sk-chip {
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 11px;
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 12px;
   font-weight: 500;
   background: var(--panel2);
   border: 1px solid var(--border);
-  color: var(--muted);
-  transition: var(--transition);
+  transition: 0.3s ease;
 }
 
 .sk-chip:hover {
-  color: var(--text);
   border-color: var(--border-hover);
+  transform: scale(1.05);
 }
-
-/* category color themes */
-.sk-ml  .skill-cat-icon { background: rgba(255,196,107,0.1); color: var(--gold); }
-.sk-ml  .skill-cat-title { color: var(--gold); }
-.sk-ml  .sk-chip:hover { color: var(--gold); border-color: rgba(255,196,107,0.3); }
-
-.sk-dl  .skill-cat-icon { background: rgba(59,158,255,0.1); color: var(--primary); }
-.sk-dl  .skill-cat-title { color: var(--primary); }
-.sk-dl  .sk-chip:hover { color: var(--primary); border-color: var(--border-hover); }
-
-.sk-nlp .skill-cat-icon { background: rgba(0,229,192,0.1); color: var(--accent); }
-.sk-nlp .skill-cat-title { color: var(--accent); }
-.sk-nlp .sk-chip:hover { color: var(--accent); border-color: rgba(0,229,192,0.3); }
-
-.sk-llm .skill-cat-icon { background: rgba(160,60,255,0.1); color: #a855f7; }
-.sk-llm .skill-cat-title { color: #a855f7; }
-.sk-llm .sk-chip:hover { color: #a855f7; border-color: rgba(160,60,255,0.3); }
-
-.sk-rag .skill-cat-icon { background: rgba(249,115,22,0.1); color: #f97316; }
-.sk-rag .skill-cat-title { color: #f97316; }
-.sk-rag .sk-chip:hover { color: #f97316; border-color: rgba(249,115,22,0.3); }
-
-.sk-fw  .skill-cat-icon { background: rgba(255,107,107,0.1); color: var(--warn); }
-.sk-fw  .skill-cat-title { color: var(--warn); }
-.sk-fw  .sk-chip:hover { color: var(--warn); border-color: rgba(255,107,107,0.3); }
 
 /* ========== NOW LEARNING ========== */
 .learning-grid {
@@ -1310,141 +1263,50 @@ h1.hero-name .highlight {
 
   <!-- SKILLS — Reorganized -->
   <section id="skills" class="section" aria-label="Skills">
-    <h2 class="section-title">Skills & Expertise</h2>
+  <h2 class="section-title">Technical Expertise</h2>
 
-    <div class="skills-grid" id="skillsGrid">
+  <div class="skills-grid">
 
-      <!-- Machine Learning -->
-      <div class="skill-category sk-ml">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">📊</div>
-          <div class="skill-cat-title">Machine Learning</div>
-        </div>
-        <div class="skill-chips">
-          <span class="sk-chip">Linear Regression</span>
-          <span class="sk-chip">Logistic Regression</span>
-          <span class="sk-chip">SVM</span>
-          <span class="sk-chip">Decision Trees</span>
-          <span class="sk-chip">Random Forest</span>
-          <span class="sk-chip">Gradient Boosting</span>
-          <span class="sk-chip">XGBoost</span>
-          <span class="sk-chip">K-Means</span>
-          <span class="sk-chip">PCA</span>
-          <span class="sk-chip">Isolation Forest</span>
-          <span class="sk-chip">Naive Bayes</span>
-          <span class="sk-chip">GDA</span>
-        </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">LLMs & Agentic Systems</div>
+      <div class="skill-chips">
+        <span class="sk-chip">LLaMA Fine-Tuning (LoRA)</span>
+        <span class="sk-chip">LangChain</span>
+        <span class="sk-chip">LangGraph</span>
+        <span class="sk-chip">Agentic AI</span>
+        <span class="sk-chip">Hybrid RAG</span>
+        <span class="sk-chip">FAISS</span>
+        <span class="sk-chip">Reranking</span>
       </div>
-
-      <!-- Deep Learning -->
-      <div class="skill-category sk-dl">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">🧠</div>
-          <div class="skill-cat-title">Deep Learning</div>
-        </div>
-        <div class="skill-chips">
-          <span class="sk-chip">PyTorch</span>
-          <span class="sk-chip">CNN</span>
-          <span class="sk-chip">RNN</span>
-          <span class="sk-chip">LSTM</span>
-          <span class="sk-chip">GRU</span>
-          <span class="sk-chip">Transformers</span>
-          <span class="sk-chip">Encoder–Decoder</span>
-          <span class="sk-chip">Attention</span>
-          <span class="sk-chip">LoRA / PEFT</span>
-          <span class="sk-chip">ResNet</span>
-          <span class="sk-chip">Transfer Learning</span>
-          <span class="sk-chip">Grad-CAM</span>
-        </div>
-      </div>
-
-      <!-- NLP -->
-      <div class="skill-category sk-nlp">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">📝</div>
-          <div class="skill-cat-title">NLP</div>
-        </div>
-        <div class="skill-chips">
-          <span class="sk-chip">TF-IDF</span>
-          <span class="sk-chip">BoW</span>
-          <span class="sk-chip">n-grams</span>
-          <span class="sk-chip">Tokenization</span>
-          <span class="sk-chip">Seq2Seq</span>
-          <span class="sk-chip">Beam Search</span>
-          <span class="sk-chip">Sentiment Analysis</span>
-          <span class="sk-chip">Topic Modeling</span>
-          <span class="sk-chip">BLEU / ROUGE</span>
-          <span class="sk-chip">BART / T5</span>
-          <span class="sk-chip">Summarization</span>
-        </div>
-      </div>
-
-      <!-- LLM & Fine-Tuning -->
-      <div class="skill-category sk-llm">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">🤖</div>
-          <div class="skill-cat-title">LLMs & GenAI</div>
-        </div>
-        <div class="skill-chips">
-          <span class="sk-chip">LLaMA</span>
-          <span class="sk-chip">Hugging Face</span>
-          <span class="sk-chip">SentenceTransformers</span>
-          <span class="sk-chip">LLM Fine-tuning</span>
-          <span class="sk-chip">LoRA</span>
-          <span class="sk-chip">Prompt Engineering</span>
-          <span class="sk-chip">LangChain</span>
-          <span class="sk-chip">LangGraph</span>
-          <span class="sk-chip">Agentic AI</span>
-          <span class="sk-chip">Tool Use / Agents</span>
-          <span class="sk-chip">Multimodal LLMs</span>
-        </div>
-      </div>
-
-      <!-- RAG & Retrieval -->
-      <div class="skill-category sk-rag">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">🔍</div>
-          <div class="skill-cat-title">RAG & Retrieval</div>
-        </div>
-        <div class="skill-chips">
-          <span class="sk-chip">FAISS</span>
-          <span class="sk-chip">Dense Retrieval</span>
-          <span class="sk-chip">Sparse Retrieval</span>
-          <span class="sk-chip">Hybrid RAG</span>
-          <span class="sk-chip">Chunking Strategies</span>
-          <span class="sk-chip">Vector DBs</span>
-          <span class="sk-chip">Recall@K</span>
-          <span class="sk-chip">Precision@K</span>
-          <span class="sk-chip">MRR</span>
-          <span class="sk-chip">Reranking</span>
-        </div>
-      </div>
-
-      <!-- Tools & Infra -->
-      <div class="skill-category sk-fw">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">⚙️</div>
-          <div class="skill-cat-title">Tools, Languages & Infra</div>
-        </div>
-        <div class="skill-chips">
-          <span class="sk-chip">Python</span>
-          <span class="sk-chip">C++</span>
-          <span class="sk-chip">FastAPI</span>
-          <span class="sk-chip">Docker</span>
-          <span class="sk-chip">DSA</span>
-          <span class="sk-chip">REST APIs</span>
-          <span class="sk-chip">Git / GitHub</span>
-          <span class="sk-chip">Structured Logging</span>
-          <span class="sk-chip">Hugging Face Hub</span>
-          <span class="sk-chip">NumPy / Pandas</span>
-          <span class="sk-chip">Scikit-learn</span>
-        </div>
-      </div>
-
     </div>
-  </section>
 
-  <div class="divider" aria-hidden></div>
+    <div class="skill-category">
+      <div class="skill-cat-title">Deep Learning & NLP</div>
+      <div class="skill-chips">
+        <span class="sk-chip">PyTorch</span>
+        <span class="sk-chip">Transformers</span>
+        <span class="sk-chip">Attention</span>
+        <span class="sk-chip">Seq2Seq</span>
+        <span class="sk-chip">BART / T5</span>
+        <span class="sk-chip">SentenceTransformers</span>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <div class="skill-cat-title">ML Systems & Deployment</div>
+      <div class="skill-chips">
+        <span class="sk-chip">FastAPI</span>
+        <span class="sk-chip">Docker</span>
+        <span class="sk-chip">REST APIs</span>
+        <span class="sk-chip">Vector DBs</span>
+        <span class="sk-chip">Structured Logging</span>
+        <span class="sk-chip">Hugging Face Hub</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- NOW LEARNING -->
   <section id="nowlearning" class="section" aria-label="Currently learning">
