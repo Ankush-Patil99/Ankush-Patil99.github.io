@@ -737,7 +737,7 @@ h1.hero-name .highlight {
 .proj-link:hover { gap: 8px; }
 .proj-link::after { content: '→'; }
 
-/* ========== SKILLS (Enhanced Readability + Premium Layout) ========== */
+/* ========== SKILLS ========== */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
@@ -767,7 +767,6 @@ h1.hero-name .highlight {
   transform: translateY(-3px);
 }
 
-/* subtle top glow */
 .skill-category::before {
   content: "";
   position: absolute;
@@ -802,7 +801,6 @@ h1.hero-name .highlight {
   letter-spacing: 0.3px;
 }
 
-/* chip layout */
 .skill-chips {
   display: flex;
   flex-wrap: wrap;
@@ -856,6 +854,19 @@ h1.hero-name .highlight {
 .sk-fw  .skill-cat-title { color: var(--warn); }
 .sk-fw  .sk-chip:hover { color: var(--warn); border-color: rgba(255,107,107,0.35); }
 
+/* ===== CHANGE 1: New Agentic AI category color ===== */
+.sk-agent .skill-cat-icon { background: rgba(0,229,192,0.08); color: var(--accent); }
+.sk-agent .skill-cat-title { color: var(--accent); }
+.sk-agent .sk-chip:hover { color: var(--accent); border-color: rgba(0,229,192,0.35); }
+/* Accent top bar for agentic category */
+.sk-agent::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  opacity: 0.7;
+}
 
 /* ========== NOW LEARNING ========== */
 .learning-grid {
@@ -900,6 +911,22 @@ h1.hero-name .highlight {
   background: var(--accent);
   animation: pulse 2s ease infinite;
   flex-shrink: 0;
+}
+
+/* ===== CHANGE 2: Active project card style in Now Learning ===== */
+.nl-card.nl-active {
+  border-color: rgba(0,229,192,0.25);
+  background: linear-gradient(135deg, rgba(0,229,192,0.05), var(--panel));
+}
+
+.nl-card.nl-active::before {
+  background: linear-gradient(180deg, var(--accent), var(--primary));
+  width: 3px;
+}
+
+.nl-card.nl-active .nl-dot {
+  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent);
 }
 
 /* ========== CONTACT ========== */
@@ -1087,6 +1114,8 @@ h1.hero-name .highlight {
       <span class="tag">RAG</span>
       <span class="tag">LangChain</span>
       <span class="tag">LangGraph</span>
+      <span class="tag">CrewAI</span>
+      <span class="tag">n8n</span>
       <span class="tag">FastAPI</span>
       <span class="tag">Hugging Face</span>
       <span class="tag">FAISS</span>
@@ -1099,7 +1128,7 @@ h1.hero-name .highlight {
     </div>
 
     <div class="about-card" id="about">
-      I'm a Machine Learning and NLP engineer focused on building production-ready LLM systems, retrieval-augmented pipelines, and efficient deep-learning models. Proficient in Python and C++, I have hands-on experience with GenAI and Agentic AI using LangChain and LangGraph, and deploy inference services via FastAPI and Docker. I enjoy turning research ideas into reliable, scalable systems — currently targeting roles in NLP / LLM / AI engineering.
+      I'm a Machine Learning and NLP engineer focused on building production-ready LLM systems, retrieval-augmented pipelines, and efficient deep-learning models. Proficient in Python and C++, I have hands-on experience with GenAI and Agentic AI using LangChain, LangGraph, CrewAI, and n8n — including multi-agent systems development and deployment. I deploy inference services via FastAPI and Docker. Currently targeting roles in NLP / LLM / AI engineering.
     </div>
   </section>
 
@@ -1128,7 +1157,7 @@ h1.hero-name .highlight {
         Implemented a production-ready Retrieval-Augmented Generation system over <strong>57,000+ EUR-Lex legal documents</strong>, using FAISS-based dense retrieval with sentence embeddings for fast, high-relevance query answering. Deployed as a Dockerized, stateless FastAPI inference service with structured logging and artifact hosting on Hugging Face Hub.
       </p>
       <p class="feat-desc">
-        Designed a comprehensive evaluation framework measuring Recall@K, Precision@K, MRR, and latency — enabling systematic benchmarking of retrieval quality and enabling systematic benchmarking and reliability analysis.
+        Designed a comprehensive evaluation framework measuring Recall@K, Precision@K, MRR, and latency — enabling systematic benchmarking of retrieval quality and reliability analysis.
       </p>
 
       <div class="feat-metrics">
@@ -1332,150 +1361,168 @@ h1.hero-name .highlight {
 
   <div class="divider" aria-hidden></div>
 
-  <!-- SKILLS — Reorganized -->
+  <!-- SKILLS -->
+  <!-- CHANGE 1: Added new "Agentic AI Frameworks" skill category -->
   <section id="skills" class="section" aria-label="Skills">
-  <h2 class="section-title">Skills & Expertise</h2>
+    <h2 class="section-title">Skills & Expertise</h2>
 
-  <div class="skills-grid" id="skillsGrid">
+    <div class="skills-grid" id="skillsGrid">
 
-    <!-- Machine Learning -->
-    <div class="skill-category sk-ml">
-      <div class="skill-cat-header">
-        <div class="skill-cat-icon">📊</div>
-        <div class="skill-cat-title">Machine Learning Algorithms</div>
+      <!-- Machine Learning -->
+      <div class="skill-category sk-ml">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">📊</div>
+          <div class="skill-cat-title">Machine Learning Algorithms</div>
+        </div>
+        <div class="skill-chips">
+          <span class="sk-chip">Linear Regression</span>
+          <span class="sk-chip">Logistic Regression</span>
+          <span class="sk-chip">SVM</span>
+          <span class="sk-chip">Decision Trees</span>
+          <span class="sk-chip">Random Forest</span>
+          <span class="sk-chip">Gradient Boosting</span>
+          <span class="sk-chip">XGBoost</span>
+          <span class="sk-chip">K-Means</span>
+          <span class="sk-chip">PCA</span>
+          <span class="sk-chip">Isolation Forest</span>
+          <span class="sk-chip">Naive Bayes</span>
+          <span class="sk-chip">GDA</span>
+        </div>
       </div>
-      <div class="skill-chips">
-        <span class="sk-chip">Linear Regression</span>
-        <span class="sk-chip">Logistic Regression</span>
-        <span class="sk-chip">SVM</span>
-        <span class="sk-chip">Decision Trees</span>
-        <span class="sk-chip">Random Forest</span>
-        <span class="sk-chip">Gradient Boosting</span>
-        <span class="sk-chip">XGBoost</span>
-        <span class="sk-chip">K-Means</span>
-        <span class="sk-chip">PCA</span>
-        <span class="sk-chip">Isolation Forest</span>
-        <span class="sk-chip">Naive Bayes</span>
-        <span class="sk-chip">GDA</span>
+
+      <!-- Deep Learning -->
+      <div class="skill-category sk-dl">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">🧠</div>
+          <div class="skill-cat-title">Deep Learning</div>
+        </div>
+        <div class="skill-chips">
+          <span class="sk-chip">PyTorch</span>
+          <span class="sk-chip">CNN</span>
+          <span class="sk-chip">RNN</span>
+          <span class="sk-chip">LSTM</span>
+          <span class="sk-chip">GRU</span>
+          <span class="sk-chip">Transformers</span>
+          <span class="sk-chip">Attention Mechanism</span>
+          <span class="sk-chip">Encoder–Decoder</span>
+          <span class="sk-chip">Transfer Learning</span>
+          <span class="sk-chip">Grad-CAM</span>
+        </div>
       </div>
+
+      <!-- NLP -->
+      <div class="skill-category sk-nlp">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">📝</div>
+          <div class="skill-cat-title">Natural Language Processing</div>
+        </div>
+        <div class="skill-chips">
+          <span class="sk-chip">TF-IDF</span>
+          <span class="sk-chip">BoW / n-grams</span>
+          <span class="sk-chip">Tokenization</span>
+          <span class="sk-chip">Seq2Seq Models</span>
+          <span class="sk-chip">Beam Search</span>
+          <span class="sk-chip">Topic Modeling</span>
+          <span class="sk-chip">Sentiment Analysis</span>
+          <span class="sk-chip">BLEU / ROUGE</span>
+          <span class="sk-chip">BART / T5</span>
+          <span class="sk-chip">Text Summarization</span>
+        </div>
+      </div>
+
+      <!-- Computer Vision -->
+      <div class="skill-category sk-cv">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">👁️</div>
+          <div class="skill-cat-title">Computer Vision</div>
+        </div>
+        <div class="skill-chips">
+          <span class="sk-chip">ResNet Architectures</span>
+          <span class="sk-chip">Image Classification</span>
+          <span class="sk-chip">Transfer Learning (CV)</span>
+          <span class="sk-chip">Grad-CAM Explainability</span>
+          <span class="sk-chip">Data Augmentation</span>
+          <span class="sk-chip">OpenCV Basics</span>
+        </div>
+      </div>
+
+      <!-- LLMs & GenAI -->
+      <div class="skill-category sk-llm">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">🤖</div>
+          <div class="skill-cat-title">LLMs & Generative AI</div>
+        </div>
+        <div class="skill-chips">
+          <span class="sk-chip">LLaMA Models</span>
+          <span class="sk-chip">Hugging Face Transformers</span>
+          <span class="sk-chip">SentenceTransformers</span>
+          <span class="sk-chip">LLM Fine-tuning (LoRA / PEFT)</span>
+          <span class="sk-chip">Prompt Engineering</span>
+          <span class="sk-chip">Multimodal LLMs</span>
+          <span class="sk-chip">Agentic AI Workflows</span>
+        </div>
+      </div>
+
+      <!-- RAG & Retrieval -->
+      <div class="skill-category sk-rag">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">🔍</div>
+          <div class="skill-cat-title">RAG & Retrieval Systems</div>
+        </div>
+        <div class="skill-chips">
+          <span class="sk-chip">FAISS Vector Search</span>
+          <span class="sk-chip">Dense Retrieval</span>
+          <span class="sk-chip">Sparse Retrieval</span>
+          <span class="sk-chip">Hybrid RAG Pipelines</span>
+          <span class="sk-chip">Chunking Strategies</span>
+          <span class="sk-chip">Reranking</span>
+          <span class="sk-chip">Recall@K / Precision@K</span>
+          <span class="sk-chip">MRR Evaluation</span>
+        </div>
+      </div>
+
+      <!-- ★ NEW: Agentic AI Frameworks (CHANGE 1) -->
+      <div class="skill-category sk-agent">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">⚡</div>
+          <div class="skill-cat-title">Agentic AI Frameworks</div>
+        </div>
+        <div class="skill-chips">
+          <span class="sk-chip">LangChain</span>
+          <span class="sk-chip">LangGraph</span>
+          <span class="sk-chip">CrewAI</span>
+          <span class="sk-chip">n8n</span>
+          <span class="sk-chip">Multi-Agent Systems Development</span>
+          <span class="sk-chip">Multi-Agent Systems Deployment</span>
+        </div>
+      </div>
+
+      <!-- Tools & Infra -->
+      <div class="skill-category sk-fw">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">⚙️</div>
+          <div class="skill-cat-title">Tools, Languages & Infrastructure</div>
+        </div>
+        <div class="skill-chips">
+          <span class="sk-chip">Python</span>
+          <span class="sk-chip">C++</span>
+          <span class="sk-chip">FastAPI</span>
+          <span class="sk-chip">Docker</span>
+          <span class="sk-chip">REST APIs</span>
+          <span class="sk-chip">Git / GitHub</span>
+          <span class="sk-chip">Structured Logging</span>
+          <span class="sk-chip">Hugging Face Hub</span>
+          <span class="sk-chip">NumPy / Pandas</span>
+          <span class="sk-chip">Scikit-learn</span>
+        </div>
+      </div>
+
     </div>
-
-    <!-- Deep Learning -->
-    <div class="skill-category sk-dl">
-      <div class="skill-cat-header">
-        <div class="skill-cat-icon">🧠</div>
-        <div class="skill-cat-title">Deep Learning</div>
-      </div>
-      <div class="skill-chips">
-        <span class="sk-chip">PyTorch</span>
-        <span class="sk-chip">CNN</span>
-        <span class="sk-chip">RNN</span>
-        <span class="sk-chip">LSTM</span>
-        <span class="sk-chip">GRU</span>
-        <span class="sk-chip">Transformers</span>
-        <span class="sk-chip">Attention Mechanism</span>
-        <span class="sk-chip">Encoder–Decoder</span>
-        <span class="sk-chip">Transfer Learning</span>
-        <span class="sk-chip">Grad-CAM</span>
-      </div>
-    </div>
-
-    <!-- NLP -->
-    <div class="skill-category sk-nlp">
-      <div class="skill-cat-header">
-        <div class="skill-cat-icon">📝</div>
-        <div class="skill-cat-title">Natural Language Processing</div>
-      </div>
-      <div class="skill-chips">
-        <span class="sk-chip">TF-IDF</span>
-        <span class="sk-chip">BoW / n-grams</span>
-        <span class="sk-chip">Tokenization</span>
-        <span class="sk-chip">Seq2Seq Models</span>
-        <span class="sk-chip">Beam Search</span>
-        <span class="sk-chip">Topic Modeling</span>
-        <span class="sk-chip">Sentiment Analysis</span>
-        <span class="sk-chip">BLEU / ROUGE</span>
-        <span class="sk-chip">BART / T5</span>
-        <span class="sk-chip">Text Summarization</span>
-      </div>
-    </div>
-
-    <!-- Computer Vision -->
-    <div class="skill-category sk-cv">
-      <div class="skill-cat-header">
-        <div class="skill-cat-icon">👁️</div>
-        <div class="skill-cat-title">Computer Vision</div>
-      </div>
-      <div class="skill-chips">
-        <span class="sk-chip">ResNet Architectures</span>
-        <span class="sk-chip">Image Classification</span>
-        <span class="sk-chip">Transfer Learning (CV)</span>
-        <span class="sk-chip">Grad-CAM Explainability</span>
-        <span class="sk-chip">Data Augmentation</span>
-        <span class="sk-chip">OpenCV Basics</span>
-      </div>
-    </div>
-
-    <!-- LLMs & GenAI -->
-    <div class="skill-category sk-llm">
-      <div class="skill-cat-header">
-        <div class="skill-cat-icon">🤖</div>
-        <div class="skill-cat-title">LLMs & Generative AI</div>
-      </div>
-      <div class="skill-chips">
-        <span class="sk-chip">LLaMA Models</span>
-        <span class="sk-chip">Hugging Face Transformers</span>
-        <span class="sk-chip">SentenceTransformers</span>
-        <span class="sk-chip">LLM Fine-tuning (LoRA / PEFT)</span>
-        <span class="sk-chip">Prompt Engineering</span>
-        <span class="sk-chip">Multimodal LLMs</span>
-        <span class="sk-chip">Agentic AI Workflows</span>
-      </div>
-    </div>
-
-    <!-- RAG & Retrieval -->
-    <div class="skill-category sk-rag">
-      <div class="skill-cat-header">
-        <div class="skill-cat-icon">🔍</div>
-        <div class="skill-cat-title">RAG & Retrieval Systems</div>
-      </div>
-      <div class="skill-chips">
-        <span class="sk-chip">FAISS Vector Search</span>
-        <span class="sk-chip">Dense Retrieval</span>
-        <span class="sk-chip">Sparse Retrieval</span>
-        <span class="sk-chip">Hybrid RAG Pipelines</span>
-        <span class="sk-chip">Chunking Strategies</span>
-        <span class="sk-chip">Reranking</span>
-        <span class="sk-chip">Recall@K / Precision@K</span>
-        <span class="sk-chip">MRR Evaluation</span>
-      </div>
-    </div>
-
-    <!-- Tools & Infra -->
-    <div class="skill-category sk-fw">
-      <div class="skill-cat-header">
-        <div class="skill-cat-icon">⚙️</div>
-        <div class="skill-cat-title">Tools, Languages & Infrastructure</div>
-      </div>
-      <div class="skill-chips">
-        <span class="sk-chip">Python</span>
-        <span class="sk-chip">C++</span>
-        <span class="sk-chip">FastAPI</span>
-        <span class="sk-chip">Docker</span>
-        <span class="sk-chip">REST APIs</span>
-        <span class="sk-chip">Git / GitHub</span>
-        <span class="sk-chip">Structured Logging</span>
-        <span class="sk-chip">Hugging Face Hub</span>
-        <span class="sk-chip">NumPy / Pandas</span>
-        <span class="sk-chip">Scikit-learn</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- NOW LEARNING -->
+  <!-- CHANGE 2: Added active workflow automation project card -->
+  <!-- CHANGE 3: Removed "Production ML Systems" card -->
   <section id="nowlearning" class="section" aria-label="Currently learning">
     <h2 class="section-title">Now Learning</h2>
     <p style="color:var(--muted);font-size:14px;margin-top:-10px">Staying current with the frontier of AI engineering.</p>
@@ -1493,70 +1540,65 @@ h1.hero-name .highlight {
         <div class="nl-dot"></div>
         Multimodal LLMs — image + text fusion architectures
       </div>
-      <div class="nl-card">
+      <div class="nl-card nl-active">
         <div class="nl-dot"></div>
-        Production ML Systems — scalable inference, monitoring & MLOps
+        🚧 Active Project — Automating real-world workflows using Agentic AI
       </div>
     </div>
   </section>
 
   <div class="divider" aria-hidden></div>
 
-<!-- CONTACT -->
-<section id="contact" class="section" aria-label="Contact">
-  <h2 class="section-title">Let's Connect</h2>
+  <!-- CONTACT -->
+  <section id="contact" class="section" aria-label="Contact">
+    <h2 class="section-title">Let's Connect</h2>
 
-  <div class="contact-card">
-    <div style="max-width:500px">
-      <h3 style="font-family:var(--font-display);font-size:20px;font-weight:800;letter-spacing:-0.3px">
-        Open to full-time ML / NLP / AI roles
-      </h3>
-      <p style="color:var(--muted);margin-top:8px;font-size:14px;line-height:1.65">
-        I'm actively looking for opportunities where I can build scalable, real-world AI systems. 
-        Reach out for interviews, collaborations, or just to talk ML.
-      </p>
-    </div>
+    <div class="contact-card">
+      <div style="max-width:500px">
+        <h3 style="font-family:var(--font-display);font-size:20px;font-weight:800;letter-spacing:-0.3px">
+          Open to full-time ML / NLP / AI roles
+        </h3>
+        <p style="color:var(--muted);margin-top:8px;font-size:14px;line-height:1.65">
+          I'm actively looking for opportunities where I can build scalable, real-world AI systems.
+          Reach out for interviews, collaborations, or just to talk ML.
+        </p>
+      </div>
 
-    <div class="contact-grid">
-      
-      <!-- Gmail Direct Compose -->
-      <a class="contact-link" 
+      <div class="contact-grid">
+        <a class="contact-link"
+           href="https://mail.google.com/mail/?view=cm&fs=1&to=ankpatil1203@gmail.com"
+           target="_blank"
+           rel="noopener noreferrer">
+          <span>📧</span> Email Me
+        </a>
+        <a class="contact-link"
+           href="https://www.linkedin.com/in/ankush-patil-48989739a"
+           target="_blank"
+           rel="noopener">
+          <span>🔗</span> LinkedIn Profile
+        </a>
+        <a class="contact-link"
+           href="https://github.com/Ankush-Patil99"
+           target="_blank"
+           rel="noopener">
+          <span>🐙</span> GitHub — Ankush-Patil99
+        </a>
+      </div>
+
+      <a class="btn-cta"
          href="https://mail.google.com/mail/?view=cm&fs=1&to=ankpatil1203@gmail.com"
          target="_blank"
          rel="noopener noreferrer">
-        <span>📧</span> Email Me
-      </a>
-
-      <a class="contact-link" 
-         href="https://www.linkedin.com/in/ankush-patil-48989739a" 
-         target="_blank" 
-         rel="noopener">
-        <span>🔗</span> LinkedIn Profile
-      </a>
-
-      <a class="contact-link" 
-         href="https://github.com/Ankush-Patil99" 
-         target="_blank" 
-         rel="noopener">
-        <span>🐙</span> GitHub — Ankush-Patil99
+        Contact Me for Interviews or Collaborations →
       </a>
     </div>
+  </section>
 
-    <!-- CTA Button -->
-    <a class="btn-cta" 
-       href="https://mail.google.com/mail/?view=cm&fs=1&to=ankpatil1203@gmail.com"
-       target="_blank"
-       rel="noopener noreferrer">
-      Contact Me for Interviews or Collaborations →
-    </a>
+  <footer style="margin-top:60px;color:var(--muted);text-align:center;padding-bottom:40px;font-size:13px">
+    © 2025 Ankush Patil — ML / NLP Engineer
+  </footer>
 
-  </div>
-</section>
-
-<footer style="margin-top:60px;color:var(--muted);text-align:center;padding-bottom:40px;font-size:13px">
-  © 2025 Ankush Patil — ML / NLP Engineer
-</footer>
-
+</main>
 
 <!-- Back to top -->
 <div class="to-top" id="toTop" role="button" tabindex="0" aria-label="Back to top">↑</div>
@@ -1595,7 +1637,7 @@ window.addEventListener('scroll', () => {
 // ===== Scroll observer for timeline items =====
 const tlItems = document.querySelectorAll('.tl-item');
 const tlObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
       setTimeout(() => entry.target.classList.add('visible'), 100);
     }
@@ -1644,7 +1686,9 @@ window.addEventListener('scroll', () => {
   else toTop.classList.remove('show');
 }, { passive: true });
 toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-toTop.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); } });
+toTop.addEventListener('keydown', e => {
+  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+});
 
 // ===== Smooth scroll with nav offset =====
 document.querySelectorAll('a[href^="#"]').forEach(a => {
